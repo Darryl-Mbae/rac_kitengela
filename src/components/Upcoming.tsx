@@ -17,6 +17,8 @@ const events: Record<number, EventType> = {
     14: {
         title: "Cybersecurity Essentials Workshop",
         location: "Kitengela, Kajiado",
+        image:
+            "https://images.pexels.com/photos/6231809/pexels-photo-6231809.jpeg",
         time: "12:00 PM",
         fee: "500",
     },
