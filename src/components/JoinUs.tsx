@@ -78,7 +78,7 @@ function JoinUs({ }: Props) {
                   <GoArrowUpRight />
                 </div>
                 <img
-                  src="images/JOIN/join4.png"
+                  src="images/JOIN/join1.jpeg"
                   alt="Slide Image"
                   className="w-full h-full object-cover"
                 />
@@ -131,7 +131,7 @@ function JoinUs({ }: Props) {
                   <GoArrowUpRight />
                 </div>
                 <img
-                  src="images/JOIN/join1.jpeg"
+                  src="images/JOIN/join3.jpeg"
                   alt="Slide Image"
                   className="w-full h-full object-cover"
                 />
@@ -142,7 +142,7 @@ function JoinUs({ }: Props) {
                 {/* Text positioned at bottom */}
                 <div className="absolute bottom-0 left-0 right-0 flex items-end  text-white px-4 pb-4">
                   <div>
-                    <h2 className="text-xl font-medium!">Grow in Confidence and Character</h2>
+                    <h2 className="text-xl font-medium!">Expand Your Professional Network.</h2>
                   </div>
                 </div>
               </div>
@@ -152,7 +152,7 @@ function JoinUs({ }: Props) {
             <SwiperSlide className='w-full h-44 lg:h-64 flex flex-col gap-2'>
               <div className='w-full relative h-[70%] overflow-hidden rounded-xl'>
                 <img
-                  src="images/JOIN/join3.jpeg"
+                  src="images/JOIN/join5.jpg"
                   alt="Slide Image"
                   className="w-full h-full object-cover"
                 />
@@ -163,7 +163,9 @@ function JoinUs({ }: Props) {
                 {/* Text positioned at bottom */}
                 <div className="absolute bottom-0 left-0 right-0 flex items-end justify-center text-white px-4 pb-4">
                   <div>
-                    <h2 className="text-xl font-medium!">Expand Your Professional Network.</h2>
+                    <h2 className="text-xl font-medium!">
+                    Grow in Confidence and Character
+                      </h2>
                   </div>
                 </div>
               </div>
