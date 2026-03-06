@@ -13,8 +13,9 @@ export default defineConfig({
       output: {
         manualChunks: undefined,
         assetFileNames: (assetInfo) => {
-          const info = assetInfo.name.split('.')
-          const extType = info[info.length - 1]
+          if (!assetInfo.name) {
+            return `assets/[name]-[hash][extname]`
+          }
           if (/\.(woff|woff2|eot|ttf|otf)$/.test(assetInfo.name)) {
             return `fonts/[name]-[hash][extname]`
           }
