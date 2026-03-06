@@ -6,31 +6,36 @@ export const faqs = [
         id: 1,
         question: "What is Rotaract?",
         answer: "Rotaract is a global community of young leaders and professionals focused on service, leadership, and personal development.",
-        image: "/images/faq/rotaract.png"
+        image: "images/FAQs/faq1.jpeg",
+
     },
     {
         id: 2,
         question: "How can I join the club?",
         answer: "You can join by attending a club meeting, filling out the membership form, and actively participating in our projects and events.",
-        image: "/images/faq/join.png"
+        image:"images/FAQs/faq5.jpeg",
+
     },
     {
         id: 3,
         question: "Are there membership fees?",
         answer: "Yes, there is a nominal annual membership fee that helps support club activities and community projects.",
-        image: "/images/faq/fees.png"
+        image:"images/FAQs/faq3.gif",
+
     },
     {
         id: 4,
         question: "What kind of projects does the club do?",
         answer: "Our projects focus on education, health, environment, and community development. Members can also propose new initiatives.",
-        image: "/images/faq/projects.png"
+        image:"images/FAQs/faq4.jpg",
+
     },
     {
         id: 5,
         question: "Can I participate without being a member?",
         answer: "Absolutely! Many of our events are open to the public, and we welcome volunteers who want to make a difference.",
-        image: "/images/faq/volunteer.png"
+        image:"images/FAQs/faq2.jpeg",
+
     }
 ]
 
@@ -120,11 +125,11 @@ function FAQs() {
                                         </p>
 
                                         {/* Image Preview */}
-                                        <div className="md:w-1/3 rounded-2xl overflow-hidden">
+                                        <div className="md:w-1/3 rounded-2xl overflow-hidden hover:rotate-2 transition-all ease-out py-2">
                                             <img
                                                 src={faq.image}
                                                 alt={faq.question}
-                                                className="rounded-2xl w-full object-cover h-40"
+                                                className="rounded-2xl w-full object-cover h-40 "
                                             />
                                         </div>
                                     </div>
