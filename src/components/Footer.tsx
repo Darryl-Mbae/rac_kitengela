@@ -44,13 +44,13 @@ function Footer({ }: Props) {
           </div>
 
           <div className="w-[120%] lg:w-full my-10">
-            <h6>Contact Inforamtion</h6>
+            <h6>Contact Information</h6>
             <ul className="text-sm mt-2 text-secondary flex flex-col gap-3">
               <li className="flex flex-row items-center gap-3">
                 <div className="border border-default p-2 rounded-full">
                   <Mail className="w-3 h-3" />
                 </div>
-                info@gmil.com
+                info@gmail.com
               </li>
               <li className="flex flex-row items-center gap-3">
                 <div className="border border-default p-2 rounded-full">
@@ -63,7 +63,7 @@ function Footer({ }: Props) {
                 <div className="border border-default p-2 rounded-full">
                   <MapPin className="w-3 h-3" />
                 </div>
-                Kitengela, Kadjiado
+                Kitengela, Kajiado
               </li>
             </ul>
           </div>

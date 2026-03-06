@@ -73,7 +73,7 @@ function JoinUs({ }: Props) {
           >
             {/* Slide 1 */}
             <SwiperSlide className='h-64 overflow-hidden rounded-xl'>
-              <div className="relative w-full h-ful">
+              <div className="relative w-full h-full">
                 <div className="absolute top-2 right-2 text-white h-10 w-10 rounded-full flex items-center justify-center bg-cranberry">
                   <GoArrowUpRight />
                 </div>
@@ -126,7 +126,7 @@ function JoinUs({ }: Props) {
             </SwiperSlide>
 
             <SwiperSlide className='h-64 overflow-hidden rounded-xl'>
-              <div className="relative w-full h-ful">
+              <div className="relative w-full h-full">
                 <div className="absolute top-2 right-2 text-white h-10 w-10 rounded-full flex items-center justify-center bg-cranberry">
                   <GoArrowUpRight />
                 </div>
@@ -149,7 +149,7 @@ function JoinUs({ }: Props) {
             </SwiperSlide>
 
             {/* Slide 2 */}
-            <SwiperSlide className='w-fullh-64 flex flex-col gap-2'>
+            <SwiperSlide className='w-full h-64 flex flex-col gap-2'>
               <div className='w-full relative h-[70%] overflow-hidden rounded-xl'>
                 <img
                   src="https://images.pexels.com/photos/6591153/pexels-photo-6591153.jpeg"
