@@ -4,9 +4,7 @@ import JoinUs from '../components/JoinUs'
 import Testimonial from '../components/Testimonial'
 import Upcoming from '../components/Upcoming'
 
-type Props = {}
-
-function Homepage({}: Props) {
+function Homepage() {
   return (
     <div>
         <About/>

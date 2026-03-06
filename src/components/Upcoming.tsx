@@ -1,5 +1,4 @@
 import { MapPin } from "lucide-react";
-import React from "react";
 
 type EventType = {
     title: string;
@@ -125,7 +124,7 @@ const Upcoming = () => {
                                             /> */}
 
                                             <span className="absolute top-4 left-4">
-                                                {events[14].title}
+                                                {topEvents[1].title}
                                             </span>
 
                                             <div className="absolute top-30 -right-1/3 rotate-5 w-full bg-tertiary p-4 rounded-[5px] aspect-[1/1.1]">
@@ -134,12 +133,12 @@ const Upcoming = () => {
                                                     src="/images/GreenPin.png"
                                                     alt=""
                                                 />
-                                                
+
 
                                                 <div className="aspect-square overflow-hidden rounded-[4px]">
                                                     <img
                                                         className="w-full h-full object-cover"
-                                                        src={topEvents[0].image}
+                                                        src={topEvents[1].image}
                                                         alt=""
                                                     />
                                                 </div>
@@ -223,7 +222,7 @@ const Upcoming = () => {
                                 <div className="border border-default p-2 rounded-full">
                                     <MapPin className="w-3 h-3" />
                                 </div>
-                                {topEvents[1].location}
+                                {topEvents[1].time}
                             </li>
                         )}
                         {topEvents[1].fee && (
@@ -231,7 +230,7 @@ const Upcoming = () => {
                                 <div className="border border-default p-2 rounded-full">
                                     <MapPin className="w-3 h-3" />
                                 </div>
-                                {topEvents[1].location}
+                                {topEvents[1].fee}
                             </li>
                         )}
                     </div>
