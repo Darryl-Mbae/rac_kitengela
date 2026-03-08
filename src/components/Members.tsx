@@ -127,7 +127,7 @@ function Members() {
                     /* KEY CHANGE: 'items-end' forces the flex children (slides)
                 to align to the bottom of the swiper-wrapper.
                 */
-                    className="mySwiper h-full! flex! items-end!"
+                    className="mySwiper h-[64vh]! flex! items-end!"
                 >
                     {boardMembers.map((member, index) => (
                         <SwiperSlide
@@ -157,7 +157,7 @@ function Members() {
                     ))}
                 </Swiper>
             </div>
-            <div className='mt-6 flex flex-row items-center gap-1 justify-center'>
+            <div className='mt-8 flex flex-row items-center gap-1 justify-center'>
                 <div className="swiper-prev cursor-pointer" onClick={handlePrevSlide}><HiMiniArrowDownLeft /></div>
                 <div className="swiper-next cursor-pointer" onClick={handleNextSlide}><HiMiniArrowUpRight /></div>
             </div>
