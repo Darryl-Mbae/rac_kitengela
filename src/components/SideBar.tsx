@@ -19,8 +19,8 @@ type Props = {
 function SideBar({ mobileOpen, page, setPage, setMobileOpen }: Props) {
   return (
     <div
-      className={`fixed inset-0 z-40 md:hidden transition-opacity duration-300 ${
-        mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+      className={`fixed inset-0 z-40 md:hidden duration-300 ${
+        mobileOpen ? "pointer-events-auto" : "pointer-events-none"
       }`}
     >
       {/* Backdrop */}
