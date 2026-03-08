@@ -1,5 +1,7 @@
 
+import { useRef } from 'react';
 import { GoArrowUpRight } from 'react-icons/go';
+import { HiMiniArrowDownLeft, HiMiniArrowUpRight } from 'react-icons/hi2';
 import { Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
@@ -7,12 +9,28 @@ import 'swiper/swiper-bundle.css';
 type Props = {}
 
 function JoinUs({ }: Props) {
+  const swiperRef = useRef<any>(null);
+
+
   const pagination = {
     clickable: true,
     renderBullet: function (_index: number, className: string) {
       return `<span class="${className}"></span>`;
     },
   };
+
+  const handlePrevSlide = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slidePrev();
+    }
+  };
+
+  const handleNextSlide = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slideNext();
+    }
+  };
+
 
   return (
     <div className="w-full grid grid-cols-1 lg:grid-cols-[38%_62%] grid-rows-[auto_1fr] lg:grid-rows-1 h-auto lg:h-[450px] gap-3 my-20">
@@ -48,6 +66,9 @@ function JoinUs({ }: Props) {
       <div className="w-full h-150 lg:h-full">
         <div className="relative w-full h-full">
           <Swiper
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+            }}
             modules={[Pagination]}
             spaceBetween={20}
             slidesPerView={1}
@@ -164,8 +185,8 @@ function JoinUs({ }: Props) {
                 <div className="absolute bottom-0 left-0 right-0 flex items-end justify-center text-white px-4 pb-4">
                   <div>
                     <h2 className="text-xl font-medium!">
-                    Grow in Confidence and Character
-                      </h2>
+                      Grow in Confidence and Character
+                    </h2>
                   </div>
                 </div>
               </div>
@@ -182,6 +203,10 @@ function JoinUs({ }: Props) {
 
           </Swiper>
         </div>
+      </div>
+      <div className='md:hidden mt-3 flex flex-row items-center gap-1 justify-center'>
+        <div className="swiper-prev cursor-pointer" onClick={handlePrevSlide}><HiMiniArrowDownLeft /></div>
+        <div className="swiper-next cursor-pointer" onClick={handleNextSlide}><HiMiniArrowUpRight /></div>
       </div>
     </div>
   )

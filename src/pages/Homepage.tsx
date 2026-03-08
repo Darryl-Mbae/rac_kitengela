@@ -7,6 +7,7 @@ import Upcoming from '../components/Upcoming'
 function Homepage() {
   return (
     <div>
+        {/* <Hero/> */}
         <About/>
         <Upcoming/>
         <JoinUs/>
