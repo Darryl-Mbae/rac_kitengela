@@ -1,5 +1,5 @@
 import React from "react"
-import { Menu, X, Sun, Moon, Instagram } from "lucide-react"
+import {  Sun, Moon} from "lucide-react"
 import { BsSubstack } from "react-icons/bs"
 import '../hamburger.css'
 

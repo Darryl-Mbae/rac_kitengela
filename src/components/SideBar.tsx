@@ -1,9 +1,5 @@
 import React from 'react'
 
-type Link = {
-  id: number
-  name: string
-}
 
 const links = [
     { name: "Home", id: 0 },
