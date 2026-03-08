@@ -1,22 +1,22 @@
 import React from 'react'
-
+import { Link, useLocation } from 'react-router-dom'
 
 const links = [
-    { name: "Home", id: 0 },
-    { name: "Events", id: 1 },
-    { name: "Members", id: 2 },
-    { name: "About Us", id: 3 },
-    { name: "Contact", id: 4 }
-  ]
+  { name: "Home", path: "/" },
+  { name: "Events", path: "/events" },
+  { name: "Members", path: "/members" },
+  { name: "About Us", path: "/about" },
+  { name: "Contact", path: "/contact" }
+]
 
 type Props = {
-  page: number
-  setPage: React.Dispatch<React.SetStateAction<number>>
   setMobileOpen: React.Dispatch<React.SetStateAction<boolean>>
   mobileOpen: boolean
 }
 
-function SideBar({ mobileOpen, page, setPage, setMobileOpen }: Props) {
+function SideBar({ mobileOpen, setMobileOpen }: Props) {
+  const location = useLocation()
+  
   return (
     <div
       className={`fixed inset-0 z-40 md:hidden duration-300 ${
@@ -53,20 +53,18 @@ function SideBar({ mobileOpen, page, setPage, setMobileOpen }: Props) {
         {/* Links */}
         <div className="flex flex-col px-4 py-4 gap-1">
           {links.map((link) => (
-            <button
-              key={link.id}
-              onClick={() => {
-                setPage(link.id)
-                setMobileOpen(false)
-              }}
+            <Link
+              key={link.path}
+              to={link.path}
+              onClick={() => setMobileOpen(false)}
               className={`text-left text-sm px-3 py-3 rounded-md transition-colors ${
-                page === link.id
-                  ? "font-medium text-primary  bg-cranberry"
-                  : "text-secondary hover:text-tertiary  hover:bg-neutral-50 dark:hover:bg-neutral-800/50"
+                location.pathname === link.path
+                  ? "font-medium text-primary bg-cranberry"
+                  : "text-secondary hover:text-tertiary hover:bg-neutral-50 dark:hover:bg-neutral-800/50"
               }`}
             >
               {link.name}
-            </button>
+            </Link>
           ))}
         </div>
       </div>

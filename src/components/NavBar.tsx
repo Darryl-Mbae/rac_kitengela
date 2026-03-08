@@ -1,26 +1,25 @@
 import React from "react"
-import {  Sun, Moon} from "lucide-react"
+import { Sun, Moon } from "lucide-react"
 import { BsSubstack } from "react-icons/bs"
+import { Link, useLocation } from "react-router-dom"
 import '../hamburger.css'
 
 type Props = {
   toggleTheme: () => void
-  theme: "light" | "dark" | "auto"
-  page: number
-  setPage: React.Dispatch<React.SetStateAction<number>>
+  theme: "light" | "dark"
   setMobileOpen: React.Dispatch<React.SetStateAction<boolean>>
   mobileOpen: boolean
-
 }
 
-function NavBar({mobileOpen,setMobileOpen, toggleTheme, page, theme, setPage }: Props) {
+function NavBar({ mobileOpen, setMobileOpen, toggleTheme, theme }: Props) {
+  const location = useLocation()
 
   const links = [
-    { name: "Home", id: 0 },
-    { name: "Events", id: 1 },
-    { name: "Members", id: 2 },
-    { name: "About Us", id: 3 },
-    { name: "Contact", id: 4 }
+    { name: "Home", path: "/" },
+    { name: "Events", path: "/events" },
+    { name: "Members", path: "/members" },
+    { name: "About Us", path: "/about" },
+    { name: "Contact", path: "/contact" }
   ]
 
   return (
@@ -31,26 +30,27 @@ function NavBar({mobileOpen,setMobileOpen, toggleTheme, page, theme, setPage }: 
 
           {/* Left */}
           <div className="flex items-center">
-            <div
+            <Link
+              to="/"
               className="font-semibold text-lg cursor-pointer h-full flex items-center"
-              onClick={() => setPage(0)}
             >
-            </div>
+              RAC Kitengela
+            </Link>
           </div>
 
           {/* Center */}
           <div className="hidden md:flex justify-center gap-8">
             {links.map((link) => (
-              <button
-                key={link.id}
-                onClick={() => setPage(link.id)}
-                className={`text-sm cursor-pointer lg:text-[16px] transition-colors ${page === link.id
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`text-sm cursor-pointer lg:text-[16px] transition-colors ${location.pathname === link.path
                   ? "text-primary font-semibold"
                   : "text-secondary hover:text-lime!"
                   }`}
               >
                 {link.name}
-              </button>
+              </Link>
             ))}
           </div>
 
@@ -71,19 +71,19 @@ function NavBar({mobileOpen,setMobileOpen, toggleTheme, page, theme, setPage }: 
 
           </div>
 
-          <div className="flex items-center gap-2 md:hidden justify-end">
+          <div className="flex items-center gap-4 md:hidden justify-end">
 
             <button
               onClick={toggleTheme}
               className="p-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800"
             >
-              {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+              {theme === "dark" ? <Sun size={22} /> : <Moon size={22} />}
             </button>
 
-           
-            <button 
-            onClick={() => setMobileOpen(prev => !prev)}
-            className={`text-primary! hamburger hamburger--spring ${mobileOpen && 'is-active'}`} type="button">
+
+            <button
+              onClick={() => setMobileOpen(prev => !prev)}
+              className={`text-primary! hamburger hamburger--spring ${mobileOpen && 'is-active'}`} type="button">
               <span className="hamburger-box">
                 <span className="hamburger-inner"></span>
               </span>
