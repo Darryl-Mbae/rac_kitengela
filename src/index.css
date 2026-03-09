@@ -228,6 +228,27 @@ p {
   border-color: var(--border-hover);
 }
 
+/* Form Input Placeholder Styles */
+.placeholder-muted::placeholder {
+  color: var(--text-muted);
+  opacity: 1;
+}
+
+.placeholder-muted::-webkit-input-placeholder {
+  color: var(--text-muted);
+  opacity: 1;
+}
+
+.placeholder-muted::-moz-placeholder {
+  color: var(--text-muted);
+  opacity: 1;
+}
+
+.placeholder-muted:-ms-input-placeholder {
+  color: var(--text-muted);
+  opacity: 1;
+}
+
 @media screen and (max-width:800px) {
   h1 {
     font-size: 2rem;
