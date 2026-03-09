@@ -1,73 +1,149 @@
-# React + TypeScript + Vite
+# RAC Kitengela Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive website for RAC Kitengela built with React, TypeScript, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ✅ **React Router** - Proper URL routing with browser history
+- ✅ **SEO Optimized** - Meta tags, Open Graph, Twitter Cards
+- ✅ **Responsive Design** - Mobile-first approach
+- ✅ **Dark/Light Theme** - System preference detection
+- ✅ **Production Ready** - Optimized builds and deployment
+- ✅ **Accessibility** - WCAG compliant components
+- ✅ **Performance** - Lazy loading and code splitting
 
-## React Compiler
+## Pages
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Home** (`/`) - Main landing page with about, events, testimonials
+- **Events** (`/events`) - Upcoming events and activities
+- **Members** (`/members`) - Team members and leadership
+- **About** (`/about`) - Organization mission, vision, values
+- **Contact** (`/contact`) - Contact information and form
+- **404** (`/*`) - Custom not found page
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React 19** - UI framework
+- **TypeScript** - Type safety
+- **Tailwind CSS 4** - Styling
+- **React Router** - Client-side routing
+- **React Helmet Async** - SEO meta tags
+- **Vite** - Build tool
+- **Swiper** - Carousel components
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Development
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+```bash
+# Install dependencies
+npm install
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## SEO & Social Media
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+The website includes comprehensive SEO optimization:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Dynamic meta titles and descriptions
+- Open Graph tags for social sharing
+- Twitter Card support
+- Structured data markup
+- Sitemap and robots.txt
+
+### Required Images
+
+Place these images in `public/images/`:
+
+- `og-home.jpg` (1200x630px) - Homepage social sharing
+- `og-events.jpg` (1200x630px) - Events page sharing
+- `og-members.jpg` (1200x630px) - Members page sharing
+- `og-about.jpg` (1200x630px) - About page sharing
+- `og-contact.jpg` (1200x630px) - Contact page sharing
+
+### Favicon Files
+
+Place these in `public/`:
+
+- `favicon.ico` (32x32px)
+- `apple-touch-icon.png` (180x180px)
+- `favicon-32x32.png` (32x32px)
+- `favicon-16x16.png` (16x16px)
+
+## Deployment
+
+### Netlify (Recommended)
+
+The project is configured for Netlify deployment:
+
+1. Connect your repository to Netlify
+2. Build command: `npm run build`
+3. Publish directory: `dist`
+4. The `netlify.toml` handles SPA routing automatically
+
+### Other Platforms
+
+For other platforms, ensure:
+- All routes redirect to `index.html` for SPA routing
+- Static files are served with proper cache headers
+- HTTPS is enabled for better SEO
+
+## Customization
+
+### Colors
+
+Update the color scheme in `src/index.css`:
+
+```css
+:root {
+  --primary-cranberry: #DC143C;
+  --secondary-lime: #C1FF07;
+  /* ... other colors */
+}
 ```
+
+### Content
+
+- Update page content in `src/pages/`
+- Modify components in `src/components/`
+- Add new routes in `src/App.tsx`
+
+### SEO
+
+Update default SEO values in `src/components/SEO.tsx`:
+
+```tsx
+const siteName = "RAC Kitengela"
+// Update social media handles, default images, etc.
+```
+
+## Performance
+
+- Images are optimized and lazy-loaded
+- Code is split by routes
+- CSS is purged in production
+- Fonts are preloaded
+
+## Browser Support
+
+- Modern browsers (Chrome, Firefox, Safari, Edge)
+- Mobile browsers (iOS Safari, Chrome Mobile)
+- Progressive enhancement for older browsers
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## License
+
+© 2026 RAC Kitengela. All rights reserved.
