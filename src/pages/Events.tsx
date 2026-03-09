@@ -1,5 +1,4 @@
 import SEO from '../components/SEO'
-import Upcoming from '../components/Upcoming'
 
 function Events() {
   return (
