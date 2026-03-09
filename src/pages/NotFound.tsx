@@ -8,6 +8,7 @@ function NotFound() {
         title="Page Not Found"
         description="The page you're looking for doesn't exist. Return to RAC Kitengela homepage."
         image="/images/og-home.jpg"
+        noindex={true}
       />
       <div className="py-20 text-center">
         <div className="max-w-md mx-auto">

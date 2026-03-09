@@ -204,6 +204,7 @@ function JoinUs({ }: Props) {
           </Swiper>
         </div>
       </div>
+      
       <div className='md:hidden mt-3 flex flex-row items-center gap-1 justify-center'>
         <div className="swiper-prev cursor-pointer" onClick={handlePrevSlide}><HiMiniArrowDownLeft /></div>
         <div className="swiper-next cursor-pointer" onClick={handleNextSlide}><HiMiniArrowUpRight /></div>
