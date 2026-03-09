@@ -11,13 +11,7 @@ function Events() {
         image="/images/og-events.jpg"
       />
       <div className="py-12">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-primary mb-4">Our Events</h1>
-          <p className="text-lg text-secondary max-w-2xl mx-auto">
-            Stay connected with our community through various events, service projects, and networking opportunities.
-          </p>
-        </div>
-        <Upcoming />
+       
       </div>
     </div>
   )
