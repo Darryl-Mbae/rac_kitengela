@@ -1,14 +1,14 @@
 import { Instagram, Mail, MapPin, Phone } from "lucide-react"
 import { BsSubstack } from "react-icons/bs";
-import { FaWhatsapp } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 type Props = {}
 
 const socials = [
   { icon: Instagram, href: "#" },
   { icon: FaWhatsapp, href: "#" },
-  { icon: FaXTwitter, href: "#" },
+  { icon: FaLinkedin, href: "#" },
   { icon: BsSubstack, href: "#" },
 ];
 
@@ -25,11 +25,12 @@ function Footer({ }: Props) {
           <div className=" my-10 ">
             <h6>Quick Links</h6>
             <ul className="text-sm mt-2 text-secondary flex flex-col gap-2">
-              <li>About Us</li>
-              <li>Our Projects</li>
-              <li>Join Rotaract</li>
-              <li>Collaborate</li>
-              <li>Events</li>
+              <Link to={"/about"}><li>About Us</li></Link>
+              <Link to={"/events"}><li>Events</li></Link>
+              <Link to={"/contact"}><li>Join Rotaract</li></Link>
+              <Link to={"/members"}><li>Members</li></Link>
+              <Link to={"/gallery"}><li>Gallery</li></Link>
+
             </ul>
           </div>
 
@@ -39,7 +40,7 @@ function Footer({ }: Props) {
               <li>Four Way Test</li>
               <li>Rotary Grace</li>
               <li>ByLaws</li>
-              <li>Suggestion Box</li>
+              <Link to={"/contact"}><li>Suggestion Box</li></Link>
             </ul>
           </div>
 
@@ -93,7 +94,7 @@ function Footer({ }: Props) {
           &copy;{new Date().getFullYear()} Rotaract Club of Kitengela. <span className="hidden md:inline">All rights reserved.</span>
         </div>
         <div className="flex flex-col lg:flex-row gap-2">
-          <div className="text-xs text-center text-secondary">Designed by <span className="font-bold cursor-pointer">Darryl Mbae</span></div>
+          <div className="text-xs text-center text-secondary">Designed by <span onClick={()=> window.open("https://darryl-mbae.netlify.app","blank")} className="font-bold cursor-pointer">Darryl Mbae</span></div>
         </div>
       </div>
 
