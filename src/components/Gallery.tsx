@@ -59,41 +59,53 @@ function Gallery({ }: Props) {
             </div>
 
             {/* GRID */}
-            <div className='my-10 grid grid-cols-3 lg:grid-cols-4 gap-1 lg:gap-3 min-h-screen'>
+            <div className='my-10 grid grid-cols-3 lg:grid-cols-4 gap-1 lg:gap-3 lg:min-h-screen'>
 
                 {/* Column 1 */}
                 <div className='w-full flex flex-col gap-1 lg:gap-3'>
                     {[0, 1, 2, 3].map(i => (
-                        <div key={i} className={`w-full aspect-[${i % 2 === 0 ? '1/0.8' : '1/1.1'}] bg-cranberry bg-cover bg-center cursor-pointer`}
+                        <div
+                            key={i}
+                            className={`bg-cranberry w-full ${i % 2 === 0 ? "aspect-[1/0.8]" : "aspect-[1/1.1]"} bg-cover bg-center cursor-pointer`}
                             style={{ backgroundImage: `url(${images[i]})` }}
-                            onClick={() => openLightbox(i)} />
+                            onClick={() => openLightbox(i)}
+                        />
                     ))}
                 </div>
 
                 {/* Column 2 */}
-                <div className='w-full flex flex-col gap-1 lg:gap-3'>
+                <div className=' w-full flex flex-col gap-1 lg:gap-3'>
                     {[4, 5, 6, 7].map(i => (
-                        <div key={i} className={`w-full aspect-[${i % 2 === 0 ? '1/1.1' : '1/0.8'}] bg-cranberry bg-cover bg-center cursor-pointer`}
+                        <div
+                            key={i}
+                            className={`bg-cranberry w-full ${i % 2 === 0 ? "aspect-[1/1.1]" : "aspect-[1/0.8]"} bg-cover bg-center cursor-pointer`}
                             style={{ backgroundImage: `url(${images[i]})` }}
-                            onClick={() => openLightbox(i)} />
+                            onClick={() => openLightbox(i)}
+                        />
                     ))}
                 </div>
 
                 {/* Column 3 */}
-                <div className='w-full flex flex-col gap-1 lg:gap-3'>
+                <div className=' w-full flex flex-col gap-1 lg:gap-3'>
                     {[8, 9, 10, 11, 12].map(i => (
-                        <div key={i} className='w-full aspect-[1/0.758] bg-cranberry bg-cover bg-center cursor-pointer'
+                        <div
+                            key={i}
+                            className='bg-cranberry w-full aspect-[1/0.753] bg-cover bg-center cursor-pointer'
                             style={{ backgroundImage: `url(${images[i]})` }}
-                            onClick={() => openLightbox(i)} />
+                            onClick={() => openLightbox(i)}
+                        />
                     ))}
                 </div>
 
                 {/* Column 4 */}
                 <div className='w-full hidden lg:flex flex-col gap-3'>
                     {[13, 14, 15, 16].map(i => (
-                        <div key={i} className={`w-full aspect-[${i === 16 ? '1/0.5' : '1/1.1'}] bg-cranberry bg-cover bg-center cursor-pointer`}
+                        <div
+                            key={i}
+                            className={`bg-cranberry w-full ${i === 16 ? "aspect-[1/0.5]" : "aspect-[1/1.1]"} bg-cover bg-center cursor-pointer`}
                             style={{ backgroundImage: `url(${images[i]})` }}
-                            onClick={() => openLightbox(i)} />
+                            onClick={() => openLightbox(i)}
+                        />
                     ))}
                 </div>
 
