@@ -1,13 +1,14 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
-
 const links = [
   { name: "Home", path: "/" },
   { name: "Events", path: "/events" },
   { name: "Members", path: "/members" },
   { name: "About Us", path: "/about" },
+  { name: "Gallery", path: "/gallery" },
   { name: "Contact", path: "/contact" }
 ]
+
 
 type Props = {
   setMobileOpen: React.Dispatch<React.SetStateAction<boolean>>
@@ -59,8 +60,8 @@ function SideBar({ mobileOpen, setMobileOpen }: Props) {
               onClick={() => setMobileOpen(false)}
               className={`text-left text-sm px-3 py-3 rounded-md transition-colors ${
                 location.pathname === link.path
-                  ? "font-medium text-primary bg-cranberry"
-                  : "text-secondary hover:text-tertiary hover:bg-neutral-50 dark:hover:bg-neutral-800/50"
+                  ? "font-medium text-white bg-cranberry"
+                  : "text-secondary hover:text-tertiary  hover:bg-[#DC143C]/40"
               }`}
             >
               {link.name}

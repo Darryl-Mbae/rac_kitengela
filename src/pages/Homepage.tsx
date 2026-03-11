@@ -4,6 +4,7 @@ import JoinUs from '../components/JoinUs'
 import Testimonial from '../components/Testimonial'
 import Upcoming from '../components/Upcoming'
 import SEO from '../components/SEO'
+import Hero from '../components/Hero'
 
 function Homepage() {
   const organizationStructuredData = {
@@ -32,7 +33,7 @@ function Homepage() {
         image="/images/og-home.jpg"
         structuredData={organizationStructuredData}
       />
-      {/* <Hero/> */}
+      <Hero/>
       <About/>
       <Upcoming/>
       <JoinUs/>

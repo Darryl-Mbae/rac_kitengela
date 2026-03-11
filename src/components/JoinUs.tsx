@@ -2,6 +2,7 @@
 import { useRef } from 'react';
 import { GoArrowUpRight } from 'react-icons/go';
 import { HiMiniArrowDownLeft, HiMiniArrowUpRight } from 'react-icons/hi2';
+import { Link } from 'react-router-dom';
 import { Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
@@ -58,7 +59,10 @@ function JoinUs({ }: Props) {
         <p><strong>Friendship. Service. Growth.</strong> Rotaract is a community of young leaders committed to uplifting others while growing together. Join us as we serve, connect, and create meaningful impact.</p>
 
 
-        <button className='cool-button'>Join Us</button>
+        <Link 
+        to={"/contact"}>
+          <button className='cool-button'>Join Us</button>
+        </Link>
         {/* Pagination moved to left side at bottom */}
         <div className="cursor-pointer px-6 joinus-pagination-container absolute bottom-8 left-8"></div>
       </div>
@@ -204,7 +208,7 @@ function JoinUs({ }: Props) {
           </Swiper>
         </div>
       </div>
-      
+
       <div className='md:hidden mt-3 flex flex-row items-center gap-1 justify-center'>
         <div className="swiper-prev cursor-pointer" onClick={handlePrevSlide}><HiMiniArrowDownLeft /></div>
         <div className="swiper-next cursor-pointer" onClick={handleNextSlide}><HiMiniArrowUpRight /></div>

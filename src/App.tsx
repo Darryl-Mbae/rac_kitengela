@@ -8,6 +8,7 @@ import Events from './pages/Events'
 import MembersPage from './pages/MembersPage'
 import Contact from './pages/Contact'
 import NotFound from './pages/NotFound'
+import Gallery from './components/Gallery'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
               <Route path="events" element={<Events />} />
               <Route path="members" element={<MembersPage />} />
               <Route path="about" element={<AboutUs />} />
+              <Route path="gallery" element={<Gallery />} />
               <Route path="contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
             </Route>

@@ -19,6 +19,7 @@ function NavBar({ mobileOpen, setMobileOpen, toggleTheme, theme }: Props) {
     { name: "Events", path: "/events" },
     { name: "Members", path: "/members" },
     { name: "About Us", path: "/about" },
+    { name: "Gallery", path: "/gallery" },
     { name: "Contact", path: "/contact" }
   ]
 
@@ -26,8 +27,7 @@ function NavBar({ mobileOpen, setMobileOpen, toggleTheme, theme }: Props) {
     <nav className="w-full bg-primary pt-3">
 
       <div className="w-[90%] mx-auto ">
-        <div className="grid grid-cols-2 lg:grid-cols-3 items-center h-20">
-
+      <div className="grid grid-cols-2 lg:grid-cols-[1fr_auto_1fr] items-center h-20">
           {/* Left */}
           <div className="flex items-center">
             <Link
@@ -39,7 +39,7 @@ function NavBar({ mobileOpen, setMobileOpen, toggleTheme, theme }: Props) {
           </div>
 
           {/* Center */}
-          <div className="hidden md:flex justify-center gap-8">
+          <div className="hidden md:flex items-center justify-center gap-8">
             {links.map((link) => (
               <Link
                 key={link.path}
@@ -64,6 +64,7 @@ function NavBar({ mobileOpen, setMobileOpen, toggleTheme, theme }: Props) {
             </button>
 
             <button
+              onClick={() => window.open("https://substack.com/@rotaractclubofkitengela" , "blank") }
               className="p-2 rounded-full bg-cranberry text-white cursor-pointer transition"
             >
               <BsSubstack size={18} />
