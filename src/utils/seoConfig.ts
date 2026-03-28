@@ -16,7 +16,7 @@ export const defaultSEO = {
   defaultDescription: "Welcome to RAC Kitengela - Building stronger communities through service, fellowship, and leadership development. Join us in making a positive impact in Kitengela and beyond.",
   defaultKeywords: "RAC Kitengela, Rotaract Club, community service, leadership development, fellowship, Kitengela, youth organization, volunteer, community impact",
   defaultImage: "https://rotaractkitengela.netlify.app/seo/default-og.jpg", // Main site image for domain sharing
-  siteUrl: "https://rackitengela.org",
+  siteUrl: "https://rotaractkitengela.netlify.app",
   twitterHandle: "@rotaractkitengela",
   themeColor: "#DC143C"
 }
