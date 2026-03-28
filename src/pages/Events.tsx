@@ -22,28 +22,28 @@ function Events() {
   const [openTimeDropdown, setOpenTimeDropdown] = useState(false);
 
   // Helper function to determine which month's events to show
-  const getTargetMonth = () => {
-    const now = new Date();
-    const currentDay = now.getDate();
-    const daysInMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+  // const getTargetMonth = () => {
+  //   const now = new Date();
+  //   const currentDay = now.getDate();
+  //   const daysInMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
 
-    // First week (days 1-7): show current month
-    // Last week (last 7 days of month): show next month
-    if (currentDay <= 7) {
-      return { month: now.getMonth(), year: now.getFullYear(), label: "This Month" };
-    } else if (currentDay > daysInMonth - 7) {
-      const nextMonth = now.getMonth() + 1;
-      const nextYear = nextMonth > 11 ? now.getFullYear() + 1 : now.getFullYear();
-      return {
-        month: nextMonth > 11 ? 0 : nextMonth,
-        year: nextYear,
-        label: "Next Month"
-      };
-    } else {
-      // Middle weeks: show current month
-      return { month: now.getMonth(), year: now.getFullYear(), label: "This Month" };
-    }
-  };
+  //   // First week (days 1-7): show current month
+  //   // Last week (last 7 days of month): show next month
+  //   if (currentDay <= 7) {
+  //     return { month: now.getMonth(), year: now.getFullYear(), label: "This Month" };
+  //   } else if (currentDay > daysInMonth - 7) {
+  //     const nextMonth = now.getMonth() + 1;
+  //     const nextYear = nextMonth > 11 ? now.getFullYear() + 1 : now.getFullYear();
+  //     return {
+  //       month: nextMonth > 11 ? 0 : nextMonth,
+  //       year: nextYear,
+  //       label: "Next Month"
+  //     };
+  //   } else {
+  //     // Middle weeks: show current month
+  //     return { month: now.getMonth(), year: now.getFullYear(), label: "This Month" };
+  //   }
+  // };
 
 
   const perPage = 6;
