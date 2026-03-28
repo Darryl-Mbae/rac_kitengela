@@ -64,7 +64,7 @@ function JoinUs({ }: Props) {
           <button className='cool-button'>Join Us</button>
         </Link>
         {/* Pagination moved to left side at bottom */}
-        <div className="cursor-pointer px-6 joinus-pagination-container absolute bottom-8 left-8"></div>
+        <div className="hidden! lg:flex cursor-pointer px-6 joinus-pagination-container absolute bottom-8 left-8"></div>
       </div>
 
       <div className="w-full h-150 lg:h-full">

@@ -1,46 +1,55 @@
-import {  MessageCircle } from "lucide-react"
-import { useState } from "react";
+import { MessageCircle } from "lucide-react"
+import { useState, useEffect } from "react";
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
+import { db } from "../utils/firebase";
 
-export const faqs = [
-    {
-        id: 1,
-        question: "What is Rotaract?",
-        answer: "Rotaract is a global community of young leaders and professionals focused on service, leadership, and personal development.",
-        image: "images/FAQs/faq1.jpeg",
-
-    },
-    {
-        id: 2,
-        question: "How can I join the club?",
-        answer: "You can join by attending a club meeting, filling out the membership form, and actively participating in our projects and events.",
-        image:"images/FAQs/faq5.jpeg",
-
-    },
-    {
-        id: 3,
-        question: "Are there membership fees?",
-        answer: "Yes, there is a nominal annual membership fee that helps support club activities and community projects.",
-        image:"images/FAQs/faq3.gif",
-
-    },
-    {
-        id: 4,
-        question: "What kind of projects does the club do?",
-        answer: "Our projects focus on education, health, environment, and community development. Members can also propose new initiatives.",
-        image:"images/FAQs/faq4.jpg",
-
-    },
-    {
-        id: 5,
-        question: "Can I participate without being a member?",
-        answer: "Absolutely! Many of our events are open to the public, and we welcome volunteers who want to make a difference.",
-        image:"images/FAQs/faq2.jpeg",
-
-    }
-]
+interface FAQ {
+    id: string;
+    question: string;
+    answer: string;
+    image: string;
+    order: number;
+}
 
 function FAQs() {
-    const [activeIndex, setActiveIndex] = useState<number | null>(1);
+    const [faqs, setFaqs] = useState<FAQ[]>([]);
+    const [activeIndex, setActiveIndex] = useState<string | null>(null);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchFAQs = async () => {
+            try {
+                const q = query(collection(db, "faqs"), orderBy("order", "asc"));
+                const querySnapshot = await getDocs(q);
+                const fetchedFAQs = querySnapshot.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data(),
+                } as FAQ));
+                
+                setFaqs(fetchedFAQs);
+                // Set first FAQ as active by default
+                if (fetchedFAQs.length > 0) {
+                    setActiveIndex(fetchedFAQs[0].id);
+                }
+            } catch (error) {
+                console.error("Error fetching FAQs: ", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchFAQs();
+    }, []);
+
+    if (loading) {
+        return (
+            <div className="grid grid-cols-1 lg:grid-cols-2 bg-secondary p-8 lg:p-10 rounded-2xl">
+                <div className="flex items-center justify-center h-40">
+                    <div className="text-lg">Loading FAQs...</div>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 bg-secondary p-8 lg:p-10 rounded-2xl">
@@ -84,8 +93,8 @@ function FAQs() {
                 </div>
 
             </div>
-            <div className="max-w-4xl mx-auto p-4 lg:p-6">
-                {faqs.map((faq) => {
+            <div className="max-w-4xl mx-auto p-4 lg:p-6 pt-6 ">
+                {faqs.map((faq, index) => {
                     const isOpen = activeIndex === faq.id;
 
                     return (
@@ -101,7 +110,7 @@ function FAQs() {
                                 <div className="flex flex-col lg:flex-row  lg:items-center gap-4">
 
                                     <span className="text-xl font-medium text-gray-400">
-                                        {faq.id.toString().padStart(2, '0')}
+                                        {(index + 1).toString().padStart(2, '0')}
                                     </span>
                                     <h3 className="text-xl font-semibold text-primary">
                                         {faq.question}

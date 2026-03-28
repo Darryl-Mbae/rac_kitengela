@@ -1,7 +1,9 @@
 import { Pagination, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Speech } from 'lucide-react';
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
+import { collection, getDocs, query } from "firebase/firestore";
+import { db } from "../utils/firebase";
 
 import 'swiper/swiper-bundle.css';
 import { FaQuoteRight } from 'react-icons/fa';
@@ -9,52 +11,48 @@ import { GoArrowUpRight } from 'react-icons/go';
 import { HiMiniArrowDownLeft, HiMiniArrowUpRight } from 'react-icons/hi2';
 
 interface Testimonial {
-  id: number;
+  id: string;
   name: string;
   role: string;
+  career: string;
+  linkedin: string;
   content: string;
   rating: number;
   image: string;
+  careerImage: string;
+  active: boolean;
+  order: number;
 }
-
-const testimonials = [
-  {
-    id: 1,
-    name: "Sarah Mwangi",
-    role: "Community Volunteer", // Rotaract role
-    career: "Public Health Officer", // Professional career
-    linkedin: "https://www.linkedin.com/in/sarahmwangi",
-    content: "Joining Rotaract Club Kitengela has been life-changing. The projects we work on truly make a difference in our community, and I've grown so much as a leader.",
-    rating: 5,
-    image: "https://images.pexels.com/photos/1133742/pexels-photo-1133742.jpeg", // Rotaract photo
-    careerImage: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg" // Professional photo
-  },
-  {
-    id: 2,
-    name: "David Ochieng",
-    role: "Past President",
-    career: "Corporate Lawyer",
-    linkedin: "https://www.linkedin.com/in/davidchieng",
-    content: "The friendships and professional networks I've built through this club are invaluable. We're not just doing service - we're building the future of our community.",
-    rating: 5,
-    image: "/images/testimonials/david.jpg",
-    careerImage: "/images/testimonials/david-career.jpg"
-  },
-  {
-    id: 3,
-    name: "Grace Wanjiku",
-    role: "Project Coordinator",
-    career: "Development Consultant",
-    linkedin: "https://www.linkedin.com/in/gracewanjiku",
-    content: "Every project feels meaningful here. From education initiatives to health campaigns, we're making real impact while developing our leadership skills.",
-    rating: 5,
-    image: "/images/testimonials/grace.jpg",
-    careerImage: "/images/testimonials/grace-career.jpg"
-  }
-];
 
 function Testimonial() {
   const swiperRef = useRef<any>(null);
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchTestimonials = async () => {
+      try {
+        // Simplified query - just get all testimonials and filter/sort in component
+        const q = query(collection(db, "testimonials"));
+        const querySnapshot = await getDocs(q);
+        const fetchedTestimonials = querySnapshot.docs
+          .map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+          } as Testimonial))
+          .filter(testimonial => testimonial.active === true) // Filter active testimonials
+          .sort((a, b) => a.order - b.order); // Sort by order
+        
+        setTestimonials(fetchedTestimonials);
+      } catch (error) {
+        console.error("Error fetching testimonials: ", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchTestimonials();
+  }, []);
 
   const pagination = {
     clickable: true,
@@ -76,6 +74,18 @@ function Testimonial() {
   };
 
 
+
+  if (loading) {
+    return (
+      <section className="py-8 md:py-16 px-4 mt-[3vh] md:mt-[5vh] lg:mt-[10vh]">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-center justify-center h-40">
+            <div className="text-lg">Loading testimonials...</div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="py-8 md:py-16 px-4 mt-[3vh] md:mt-[5vh] lg:mt-[10vh]">

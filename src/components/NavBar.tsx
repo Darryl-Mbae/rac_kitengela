@@ -1,8 +1,8 @@
 import React from "react"
 import { Sun, Moon } from "lucide-react"
-import { BsSubstack } from "react-icons/bs"
 import { Link, useLocation } from "react-router-dom"
 import '../hamburger.css'
+import { getSocialLink } from "../utils/socials"
 
 type Props = {
   toggleTheme: () => void
@@ -64,10 +64,20 @@ function NavBar({ mobileOpen, setMobileOpen, toggleTheme, theme }: Props) {
             </button>
 
             <button
-              onClick={() => window.open("https://substack.com/@rotaractclubofkitengela" , "blank") }
+              onClick={() => {
+                const substackLink = getSocialLink('Substack')
+                if (substackLink) window.open(substackLink.href, "blank")
+              }}
               className="p-2 rounded-full bg-cranberry text-white cursor-pointer transition"
             >
-              <BsSubstack size={18} />
+              {(() => {
+                const substackLink = getSocialLink('Substack')
+                if (substackLink) {
+                  const Icon = substackLink.icon
+                  return <Icon className="w-[18px] h-[18px]" />
+                }
+                return null
+              })()}
             </button>
 
           </div>

@@ -1,5 +1,7 @@
 import { Helmet } from 'react-helmet-async'
 
+import { getSocialLink } from '../utils/socials'
+
 interface SEOProps {
   title: string
   description: string
@@ -52,7 +54,7 @@ const SEO = ({
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={absoluteImage} />
-      <meta name="twitter:site" content="@racKitengela" />
+      <meta name="twitter:site" content={`@${getSocialLink('Twitter/X')?.href.split('/').pop() || 'racKitengela'}`} />
 
       {/* Additional Meta Tags */}
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />

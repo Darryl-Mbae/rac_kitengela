@@ -7,10 +7,20 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "addEvents": "node scripts/addBatchEvents.js",
+    "updateLinks": "node scripts/updateEventLinks.js",
+    "addFAQs": "node scripts/addBatchFAQs.js",
+    "addTestimonials": "node scripts/addBatchTestimonials.js",
+    "addBoardMembers": "node scripts/addBatchBoardMembers.js",
+    "addMembershipSteps": "node scripts/addBatchMembershipSteps.js",
+    "addMembers": "node scripts/addBatchMembers.js"
   },
   "dependencies": {
+    "@cloudinary/react": "^1.14.4",
+    "@cloudinary/url-gen": "^1.22.0",
     "@tailwindcss/vite": "^4.2.1",
+    "firebase": "^12.10.0",
     "lucide-react": "^0.576.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
