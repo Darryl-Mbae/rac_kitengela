@@ -45,7 +45,6 @@ function Events() {
     }
   };
 
-  const targetMonth = getTargetMonth();
 
   const perPage = 6;
   const categories = ["All", "Club Hangout", "Community Service", "Mentorship", "Club Projects"];

@@ -22,6 +22,7 @@ function SocialLinks({
     : socialLinks
 
   const getVariantStyles = (social: SocialLink) => {
+    console.log(social)
     switch (variant) {
       case 'footer':
         return "border border-default p-2 rounded-full inline-flex hover:bg-secondary/10 transition"
@@ -34,6 +35,7 @@ function SocialLinks({
     }
   }
 
+  
   return (
     <ul className={`flex gap-3 ${className}`}>
       {filteredSocials.map((social, index) => {
