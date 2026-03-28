@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import './App.css'
 import Layout from './components/Layout'
+import ScrollToTop from './components/ScrollToTop'
 import Homepage from './pages/Homepage'
 import AboutUs from './pages/AboutUs'
 import Events from './pages/Events'
@@ -14,6 +15,7 @@ function App() {
   return (
     <HelmetProvider>
       <Router>
+        <ScrollToTop />
         <div className='w-full p-0'>
           <Routes>
             <Route path="/" element={<Layout />}>

@@ -1,16 +1,8 @@
-import { Instagram, Mail, MapPin, Phone } from "lucide-react"
-import { BsSubstack } from "react-icons/bs";
-import { FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { Mail, MapPin, Phone } from "lucide-react"
 import { Link } from "react-router-dom";
+import SocialLinks from "./SocialLinks";
 
 type Props = {}
-
-const socials = [
-  { icon: Instagram, href: "#" },
-  { icon: FaWhatsapp, href: "#" },
-  { icon: FaLinkedin, href: "#" },
-  { icon: BsSubstack, href: "#" },
-];
 
 function Footer({ }: Props) {
   return (
@@ -70,21 +62,11 @@ function Footer({ }: Props) {
           </div>
         </div>
         <div className="flex justify-center lg:justify-end mt-10">
-          <ul className="flex gap-3 text-secondary">
-            {socials.map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <li key={index}>
-                  <a
-                    href={item.href}
-                    className="border border-default p-2 rounded-full inline-flex hover:bg-secondary/10 transition"
-                  >
-                    <Icon className="w-4 h-4" />
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
+          <SocialLinks 
+            variant="footer" 
+            className="text-secondary"
+            filterPlatforms={['Instagram', 'WhatsApp', 'LinkedIn', 'Substack']}
+          />
         </div>
 
       </div>

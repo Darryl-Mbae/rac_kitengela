@@ -5,6 +5,7 @@ import Testimonial from '../components/Testimonial'
 import Upcoming from '../components/Upcoming'
 import SEO from '../components/SEO'
 import Hero from '../components/Hero'
+import { socialLinks } from '../utils/socials'
 
 function Homepage() {
   const organizationStructuredData = {
@@ -14,9 +15,7 @@ function Homepage() {
     "description": "Building stronger communities through service, fellowship, and leadership development in Kitengela and beyond.",
     "url": "https://rackitengela.org",
     "logo": "https://rackitengela.org/images/logo.png",
-    "sameAs": [
-      "https://twitter.com/racKitengela"
-    ],
+    "sameAs": socialLinks.map(social => social.href),
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Kitengela",
@@ -26,19 +25,19 @@ function Homepage() {
 
   return (
     <div>
-      <SEO 
+      <SEO
         title="Home"
         description="Welcome to RAC Kitengela - Building stronger communities through service, fellowship, and leadership development. Join us in making a positive impact in Kitengela and beyond."
         keywords="RAC Kitengela, community service, leadership, fellowship, Kitengela, youth organization"
         image="/images/og-home.jpg"
         structuredData={organizationStructuredData}
       />
-      <Hero/>
-      <About/>
-      <Upcoming/>
-      <JoinUs/>
-      <FAQs/>
-      <Testimonial/>
+      <Hero />
+      <About />
+      <Upcoming />
+      <JoinUs />
+      <FAQs />
+      <Testimonial />
     </div>
   )
 }

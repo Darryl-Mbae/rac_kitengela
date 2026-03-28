@@ -1,15 +1,9 @@
 import { useState } from 'react';
 import SEO from './SEO';
 import { HiMiniArrowDownLeft, HiMiniArrowUpRight, HiMiniXMark } from "react-icons/hi2";
+import { galleryImages } from '../utils/images';
 
 type Props = {}
-
-const images = [
-    "/images/photo1.jpg", "/images/photo2.jpg", "/images/photo3.jpg", "/images/photo4.jpg",
-    "/images/photo5.jpg", "/images/photo6.jpg", "/images/photo7.jpg", "/images/photo8.jpg",
-    "/images/photo9.jpg", "/images/photo10.jpg", "/images/photo11.jpg", "/images/photo12.jpg", "/images/photo13.jpg",
-    "/images/photo14.jpg", "/images/photo15.jpg", "/images/photo16.jpg", "/images/photo17.jpg"
-];
 
 function Gallery({ }: Props) {
     const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
@@ -19,12 +13,12 @@ function Gallery({ }: Props) {
 
     const nextImage = () => {
         if (lightboxIndex === null) return;
-        setLightboxIndex((lightboxIndex + 1) % images.length);
+        setLightboxIndex((lightboxIndex + 1) % galleryImages.length);
     };
 
     const prevImage = () => {
         if (lightboxIndex === null) return;
-        setLightboxIndex((lightboxIndex - 1 + images.length) % images.length);
+        setLightboxIndex((lightboxIndex - 1 + galleryImages.length) % galleryImages.length);
     };
 
     return (
@@ -66,8 +60,8 @@ function Gallery({ }: Props) {
                     {[0, 1, 2, 3].map(i => (
                         <div
                             key={i}
-                            className={`bg-cranberry w-full ${i % 2 === 0 ? "aspect-[1/0.8]" : "aspect-[1/1.1]"} bg-cover bg-center cursor-pointer`}
-                            style={{ backgroundImage: `url(${images[i]})` }}
+                            className={`bg-cranberry w-full ${i % 2 === 0 ? "aspect-[1/0.8]" : "aspect-[1/1.1]"} bg-cover bg-center cursor-pointer rounded-lg overflow-hidden`}
+                            style={{ backgroundImage: `url(${galleryImages[i]?.src})` }}
                             onClick={() => openLightbox(i)}
                         />
                     ))}
@@ -78,8 +72,8 @@ function Gallery({ }: Props) {
                     {[4, 5, 6, 7].map(i => (
                         <div
                             key={i}
-                            className={`bg-cranberry w-full ${i % 2 === 0 ? "aspect-[1/1.1]" : "aspect-[1/0.8]"} bg-cover bg-center cursor-pointer`}
-                            style={{ backgroundImage: `url(${images[i]})` }}
+                            className={`bg-cranberry w-full ${i % 2 === 0 ? "aspect-[1/1.1]" : "aspect-[1/0.8]"} bg-cover bg-center cursor-pointer rounded-lg overflow-hidden`}
+                            style={{ backgroundImage: `url(${galleryImages[i]?.src})` }}
                             onClick={() => openLightbox(i)}
                         />
                     ))}
@@ -90,8 +84,8 @@ function Gallery({ }: Props) {
                     {[8, 9, 10, 11, 12].map(i => (
                         <div
                             key={i}
-                            className='bg-cranberry w-full aspect-[1/0.753] bg-cover bg-center cursor-pointer'
-                            style={{ backgroundImage: `url(${images[i]})` }}
+                            className='bg-cranberry w-full aspect-[1/0.753] bg-cover bg-center cursor-pointer rounded-lg overflow-hidden'
+                            style={{ backgroundImage: `url(${galleryImages[i]?.src})` }}
                             onClick={() => openLightbox(i)}
                         />
                     ))}
@@ -102,8 +96,8 @@ function Gallery({ }: Props) {
                     {[13, 14, 15, 16].map(i => (
                         <div
                             key={i}
-                            className={`bg-cranberry w-full ${i === 16 ? "aspect-[1/0.5]" : "aspect-[1/1.1]"} bg-cover bg-center cursor-pointer`}
-                            style={{ backgroundImage: `url(${images[i]})` }}
+                            className={`bg-cranberry w-full ${i === 16 ? "aspect-[1/0.5]" : "aspect-[1/1.1]"} bg-cover bg-center cursor-pointer rounded-lg overflow-hidden`}
+                            style={{ backgroundImage: `url(${galleryImages[i]?.src})` }}
                             onClick={() => openLightbox(i)}
                         />
                     ))}
@@ -120,7 +114,11 @@ function Gallery({ }: Props) {
                     <button onClick={prevImage} className="cursor-pointer absolute left-5 text-white text-3xl">
                         <HiMiniArrowDownLeft />
                     </button>
-                    <img src={images[lightboxIndex]} className="max-h-[90%] max-w-[90%] object-contain" />
+                    <img 
+                        src={galleryImages[lightboxIndex]?.src} 
+                        alt={galleryImages[lightboxIndex]?.alt}
+                        className="max-h-[90%] max-w-[90%] object-contain" 
+                    />
                     <button onClick={nextImage} className="cursor-pointer absolute right-5 text-white text-3xl">
                         <HiMiniArrowUpRight />
                     </button>

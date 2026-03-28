@@ -1,28 +1,39 @@
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../utils/firebase";
+import { useEffect, useState } from "react";
+
 function Hero() {
+  interface HeroData {
+    title?: string;
+    image?: string;
+    description?: string;
+    buttonLink?: string;
+    buttonText?: string;
 
-  const heroData = [
-    {
-      title: "Wellness Wednesdays",
-      description:
-        "At Rotaract Club of Kitengela, we believe service starts with caring for ourselves and each other. Every Wellness Wednesday, we share reflections, tips, and conversations about mental wellness and personal growth.",
-      buttonText: "Articles",
-      link: "https://substack.com/@rotaractclubofkitengela",
-      image: "images/wellness.png",
-    }
-  ];
+  }
 
-  const hero = heroData[0];
+  const [hero, setHero] = useState<HeroData | null>(null);
+
+  useEffect(() => {
+    getDetails()
+  }, [])
+
+
+  async function getDetails() {
+    const ad = await getDocs(collection(db, "advertise"));
+    setHero(ad.docs[0].data());
+  }
 
   return (
     <div className="w-full">
       <div className="mt-5 mb-20 rounded-xl w-full h-[85vh] bg-cranberry"></div>
 
-      <div className="w-full grid-cols-1 lg:grid lg:grid-cols-2 rounded-xl bg-secondary items-center pb-5 lg:pb-0">
-        <div className="mx-auto w-full lg:w-[85%] flex flex-col relative p-10">
+      <div className="w-full grid-cols-1 lg:grid lg:grid-cols-2 rounded-xl items-center lg:bg-secondary pb-5 lg:pb-0">
+        <div className="mx-auto w-full lg:w-[85%] flex flex-col relative p-4 lg:p-10 pb-10">
 
           <h1 className="pb-6 relative">
             <span className="relative inline-block">
-              {hero.title[0]}
+              {hero?.title?.[0]}
               <svg
                 width="38"
                 height="44"
@@ -36,22 +47,34 @@ function Hero() {
                 <path fillRule="evenodd" clipRule="evenodd" d="M61.1264 2.63576C61.4264 8.65176 61.7259 14.6678 62.0259 20.6848C62.0259 22.0628 63.2264 23.1268 64.6264 23.0598C66.0264 22.9918 67.0259 21.8188 67.0259 20.4398C66.7259 14.4138 66.4264 8.38876 66.1264 2.36376C66.0264 0.985757 64.8262 -0.0712432 63.4262 0.00375683C62.1262 0.0787568 61.0264 1.25876 61.1264 2.63576Z" fill="#C1FF07" />
               </svg>
             </span>
-            {hero.title.slice(1)}
+            {hero?.title?.slice(1)}
           </h1>
 
-          <p>{hero.description}</p>
+          <p>{hero?.description}</p>
 
           <button
-            onClick={() => window.open(hero.link, "_blank")}
+            onClick={() => window.open(hero?.buttonLink, "_blank")}
             className="cool-button"
           >
-            {hero.buttonText}
+            {hero?.buttonText}
           </button>
+
+
+          {/* <div className='mt-8 flex flex-row items-center w-full bg-secondary rounded-lg h-[25%] lg:h-[20%] text-sm lg:text-[16px] p-5 lg:p-10 justify-between'>
+              <div className='flex flex-col'>
+                <div className='text-primary'>For <span className='hidden lg:inline-flex'>partnership and </span> collaborations</div>
+                <div className='text-secondary'>partner@rotaractkitengela.com</div>
+              </div>
+              <div className='w-10 aspect-square rounded-full bg-lime text-black flex items-center justify-center'>
+                <HiMiniArrowUpRight />
+
+              </div>
+            </div> */}
 
         </div>
 
         <div className="w-[90%] lg:w-[60%] lg:pb-0 lg:my-20 mx-auto rounded-xl overflow-hidden aspect-square">
-          <img src={hero.image} alt={hero.title} />
+          <img src={hero?.image} alt={hero?.title} />
         </div>
 
       </div>

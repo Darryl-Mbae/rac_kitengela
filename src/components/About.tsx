@@ -2,7 +2,7 @@
 
 const About = () => {
     return (
-        <div className='lg:my-[20vh] my-[15vh] font-semibold text-center text-primary text-3xl lg:text-5xl w-[80%] mx-auto leading-tight'>
+        <div className='lg:my-[20vh] my-[15vh] font-semibold text-center text-primary text-3xl lg:text-5xl w-[90%] lg:w-[80%] mx-auto leading-tight'>
             <span className="relative inline-block">
                 W
                 <svg
