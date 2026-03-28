@@ -1,14 +1,18 @@
 import SEO from '../components/SEO'
 import Members from '../components/Members'
+import { getPageSEO } from '../utils/seoConfig'
 
 function MembersPage() {
+  const pageSEO = getPageSEO('members')
+  
   return (
     <div>
       <SEO 
-        title="Members"
-        description="Meet the dedicated members of RAC Kitengela. Get to know our team of passionate individuals committed to community service and leadership."
-        keywords="RAC Kitengela members, team, leadership, community leaders, volunteers"
-        image="/images/og-members.jpg"
+        title={pageSEO.title}
+        description={pageSEO.description}
+        keywords={pageSEO.keywords}
+        image={pageSEO.image}
+        type={pageSEO.type}
       />
       <div className="py-12">
         <Members />

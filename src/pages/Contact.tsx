@@ -1,10 +1,12 @@
 import SEO from '../components/SEO'
 import CustomSelect from '../components/CustomSelect'
+import { getPageSEO } from '../utils/seoConfig'
 import { useState } from 'react';
 import { HiMiniArrowUpRight } from 'react-icons/hi2';
 import SocialLinks from '../components/SocialLinks';
 
 function Contact() {
+  const pageSEO = getPageSEO('contact')
   const [selectedInterest, setSelectedInterest] = useState('')
 
   const interestOptions = [
@@ -17,10 +19,11 @@ function Contact() {
   return (
     <div>
       <SEO
-        title="Contact Us"
-        description="Get in touch with RAC Kitengela. Contact us for inquiries about membership, events, partnerships, or community service opportunities."
-        keywords="RAC Kitengela contact, get in touch, membership inquiries, partnerships, community service"
-        image="/images/og-contact.jpg"
+        title={pageSEO.title}
+        description={pageSEO.description}
+        keywords={pageSEO.keywords}
+        image={pageSEO.image}
+        type={pageSEO.type}
       />
       <div className="w-full pt-10">
         {/* <div className='w-full mb-10 grid grid-cols-1 lg:grid-cols-2 bg-secondary rounded-lg p-12 lg:p-20 my-5'>

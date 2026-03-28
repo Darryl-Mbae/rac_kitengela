@@ -6,6 +6,7 @@ import { HiMiniArrowDownLeft, HiMiniArrowUpRight } from "react-icons/hi2";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../utils/firebase";
 import { galleryImages } from '../utils/images';
+import { getPageSEO } from '../utils/seoConfig';
 
 
 function Events() {
@@ -147,7 +148,12 @@ function Events() {
 
   return (
     <div className="container mx-auto px-4">
-      <SEO title="Events" description="Discover upcoming events." />
+      <SEO
+        title={getPageSEO('events').title}
+        description={getPageSEO('events').description}
+        keywords={getPageSEO('events').keywords}
+        image={getPageSEO('events').image}
+      />
 
       <div className="py-12">
         {/* HERO SECTION (Shortened for brevity) */}
