@@ -6,8 +6,11 @@ import Upcoming from '../components/Upcoming'
 import SEO from '../components/SEO'
 import Hero from '../components/Hero'
 import { socialLinks } from '../utils/socials'
+import { getPageSEO } from '../utils/seoConfig'
 
 function Homepage() {
+  const pageSEO = getPageSEO('home')
+  
   const organizationStructuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -26,10 +29,11 @@ function Homepage() {
   return (
     <div>
       <SEO
-        title="Home"
-        description="Welcome to RAC Kitengela - Building stronger communities through service, fellowship, and leadership development. Join us in making a positive impact in Kitengela and beyond."
-        keywords="RAC Kitengela, community service, leadership, fellowship, Kitengela, youth organization"
-        image="/images/og-home.jpg"
+        title={pageSEO.title}
+        description={pageSEO.description}
+        keywords={pageSEO.keywords}
+        image={pageSEO.image}
+        type={pageSEO.type}
         structuredData={organizationStructuredData}
       />
       <Hero />

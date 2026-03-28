@@ -1,13 +1,17 @@
 import SEO from '../components/SEO'
+import { getPageSEO } from '../utils/seoConfig'
 
 function AboutUs() {
+  const pageSEO = getPageSEO('about')
+  
   return (
     <div>
       <SEO
-        title="About Us"
-        description="Learn about RAC Kitengela's mission, vision, and values. Discover how we're making a difference in our community through service and leadership."
-        keywords="RAC Kitengela about, mission, vision, community service, leadership development"
-        image="/images/og-about.jpg"
+        title={pageSEO.title}
+        description={pageSEO.description}
+        keywords={pageSEO.keywords}
+        image={pageSEO.image}
+        type={pageSEO.type}
       />
       <div className="py-12">
 

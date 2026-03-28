@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async'
 
 import { getSocialLink } from '../utils/socials'
+import { defaultSEO } from '../utils/seoConfig'
 
 interface SEOProps {
   title: string
@@ -16,14 +17,14 @@ interface SEOProps {
 const SEO = ({ 
   title, 
   description, 
-  keywords = "RAC Kitengela, community, events, members, about us",
-  image = "/og-image.jpg", // 1200x630px recommended
+  keywords = defaultSEO.defaultKeywords,
+  image = defaultSEO.defaultImage, // Use default site image as fallback
   url = window.location.href,
   type = "website",
   noindex = false,
   structuredData
 }: SEOProps) => {
-  const siteName = "RAC Kitengela"
+  const siteName = defaultSEO.siteName
   const fullTitle = `${title} | ${siteName}`
   
   // Convert relative URLs to absolute URLs for social media crawlers
@@ -37,7 +38,7 @@ const SEO = ({
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
-      <meta name="author" content="RAC Kitengela" />
+      <meta name="author" content={siteName} />
       <link rel="canonical" href={absoluteUrl} />
 
       {/* Open Graph Meta Tags */}
@@ -59,7 +60,7 @@ const SEO = ({
       {/* Additional Meta Tags */}
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
-      <meta name="theme-color" content="#DC143C" />
+      <meta name="theme-color" content={defaultSEO.themeColor} />
       
       {/* Structured Data (JSON-LD) */}
       {structuredData && (
@@ -73,6 +74,7 @@ const SEO = ({
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+      <link rel="manifest" href="/site.webmanifest" />
     </Helmet>
   )
 }
