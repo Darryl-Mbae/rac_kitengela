@@ -74,7 +74,7 @@ function Hero() {
           </span>
         </div>
       </div>
-      <p className=" mx-auto w-[80%] lg:w-[40%] text-center text-lg font-light">Creating opportunities for young leaders to collaborate, inspire change, and shape stronger communities.</p>
+      <p className=" mx-auto w-[80%] lg:w-[40%] text-center text-lg font-light">Empowering young professionals to collaborate, inspire action, and shape stronger communities.</p>
 
       <div className="w-full overflow-hidden mt-5 grid grid-cols-[15%_70%_15%] md:grid-cols-[15%_70%_15%] lg:grid-cols-[20%_60%_20%] h-[75vh] lg:h-[58vh] gap-2 lg:gap-5 items-center">
 

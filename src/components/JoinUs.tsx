@@ -57,7 +57,7 @@ function JoinUs({ }: Props) {
             tart Your Journey
             <br />With Us{" "}
           </h1>
-          <p><strong>Friendship. Service. Growth.</strong> Rotaract is a community of young leaders committed to uplifting others while growing together. Join us as we serve, connect, and create meaningful impact.</p>
+          <p><strong>Friendship. Service. Growth.</strong> Rotaract is a network of passionate individuals committed to uplifting others while growing together. Join us as we serve, connect, and make a lasting difference.</p>
 
 
           <Link
@@ -132,7 +132,7 @@ function JoinUs({ }: Props) {
                       <span className="font-cursive text-cranberry text-4xl!">
                         Supportive
                       </span>{"  "}
-                      circle of like-minded young leaders
+                      circle of like-minded change-makers
                     </p>
                   </div>
                   <div className='w-full relative h-[70%] overflow-hidden rounded-xl'>
@@ -204,7 +204,7 @@ function JoinUs({ }: Props) {
                       <span className="font-cursive text-cranberry text-4xl!">
                         Create
                       </span>{"  "}
-                      meaningful change.                </p>
+                      lasting impact.                </p>
                   </div>
 
                 </SwiperSlide>

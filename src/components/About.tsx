@@ -32,8 +32,8 @@ const About = () => {
 
             {" "} driven by
             <span className="text-cranberry"> service</span>, and
-            <span className="text-cranberry"> community impact</span>.
-            Together we grow, connect, and create meaningful change.
+            <span className="text-cranberry"> community action</span>.
+            Together we grow, connect, and foster positive change.
         </div>
     )
 }
