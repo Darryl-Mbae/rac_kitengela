@@ -1,8 +1,5 @@
-import { collection, getDocs } from "firebase/firestore";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { FaAsterisk } from "react-icons/fa6";
-import { db } from "../utils/firebase";
-import { type Event } from "../components/EventCard";
 
 type MarqueeProps = {
     title: string;
