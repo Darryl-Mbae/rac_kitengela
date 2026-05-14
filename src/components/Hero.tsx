@@ -114,7 +114,7 @@ function Hero() {
             className="
         m-auto
         w-[88%]
-        h-[82%]
+        h-[85.5%]
         lg:w-[92%]
         lg:h-[87%]
         object-cover
