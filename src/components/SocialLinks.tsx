@@ -1,4 +1,4 @@
-import { socialLinks, type SocialLink } from '../utils/socials'
+import { socialLinks } from '../utils/socials'
 
 interface SocialLinksProps {
   variant?: 'default' | 'footer' | 'contact' | 'header'
@@ -8,21 +8,20 @@ interface SocialLinksProps {
   filterPlatforms?: string[]
 }
 
-function SocialLinks({ 
-  variant = 'default', 
-  className = '', 
+function SocialLinks({
+  variant = 'default',
+  className = '',
   iconClassName = 'w-4 h-4',
   showLabels = false,
   filterPlatforms
 }: SocialLinksProps) {
-  
+
   // Filter social links if specific platforms are requested
-  const filteredSocials = filterPlatforms 
+  const filteredSocials = filterPlatforms
     ? socialLinks.filter(social => filterPlatforms.includes(social.name))
     : socialLinks
 
-  const getVariantStyles = (social: SocialLink) => {
-    console.log(social)
+  const getVariantStyles = () => {
     switch (variant) {
       case 'footer':
         return "border border-default p-2 rounded-full inline-flex hover:bg-secondary/10 transition"
@@ -35,7 +34,7 @@ function SocialLinks({
     }
   }
 
-  
+
   return (
     <ul className={`flex gap-3 ${className}`}>
       {filteredSocials.map((social, index) => {
@@ -46,7 +45,7 @@ function SocialLinks({
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
-              className={getVariantStyles(social)}
+              className={getVariantStyles()}
               aria-label={`Follow us on ${social.name}`}
               title={social.name}
             >

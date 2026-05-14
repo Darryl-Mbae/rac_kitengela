@@ -22,10 +22,10 @@ const EventCard = ({ event }: EventCardProps) => {
   // Helper to safely format Date objects or Firebase Timestamps
   const formatDate = (dateInput: any): string => {
     if (!dateInput) return "Date TBD";
-    
+
     // If it's a Firebase Timestamp, convert it. Otherwise, use as is.
     const date = dateInput.toDate ? dateInput.toDate() : new Date(dateInput);
-    
+
     return date.toLocaleDateString("en-US", {
       year: "numeric",
       month: "long",
@@ -42,14 +42,14 @@ const EventCard = ({ event }: EventCardProps) => {
       </div>
       <h3 className="my-3! text-lg font-bold">{event.title}</h3>
       <p className="line-clamp-2 text-sm text-gray-600">{event.description}</p>
-      
+
       <div className="flex flex-row items-center justify-between mt-4">
         <div
           className="w-[40px] aspect-square rounded-full bg-cranberry text-white flex items-center justify-center transition"
         >
           <Icon size={18} className="text-primary" />
         </div>
-        
+
         {/* 2. Fixed Rendering: Call the helper function here */}
         {event.date && (
           <p className="text-sm font-medium">

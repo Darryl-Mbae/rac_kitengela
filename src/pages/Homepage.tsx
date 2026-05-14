@@ -2,15 +2,15 @@ import About from '../components/About'
 import FAQs from '../components/FAQs'
 import JoinUs from '../components/JoinUs'
 import Testimonial from '../components/Testimonial'
-import Upcoming from '../components/Upcoming'
 import SEO from '../components/SEO'
 import Hero from '../components/Hero'
 import { socialLinks } from '../utils/socials'
 import { getPageSEO } from '../utils/seoConfig'
+import Marquee from "../components/Marquee";
 
 function Homepage() {
   const pageSEO = getPageSEO('home')
-  
+
   const organizationStructuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -36,9 +36,14 @@ function Homepage() {
         type={pageSEO.type}
         structuredData={organizationStructuredData}
       />
+      <Marquee
+        title="COMMUNITY CLEANUP DRIVE"
+        location="KITENGELA"
+        time="SAT 8:00 AM"
+        fee="KES 500"
+      />
       <Hero />
       <About />
-      <Upcoming />
       <JoinUs />
       <FAQs />
       <Testimonial />

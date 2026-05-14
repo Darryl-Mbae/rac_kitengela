@@ -120,27 +120,25 @@ function Contact() {
             <form className="space-y-4">
               {/* Name */}
               <div>
-                <label className="block text-sm font-medium text-primary mb-2">Name</label>
+                <label className="block text-sm font-medium text-primary mb-2">Name <span className="text-primary">*</span></label>
                 <input
                   type="text"
                   className="w-full px-4 py-2 border border-default rounded-lg bg-primary text-primary placeholder-muted focus:outline-none focus:border-cranberry transition-colors"
-                  placeholder="Your name"
                 />
               </div>
 
               {/* Email + Interest */}
               <div className="flex flex-col md:flex-row gap-4">
                 <div className="flex-1">
-                  <label className="block text-sm font-medium text-primary mb-2">Email</label>
+                  <label className="block text-sm font-medium text-primary mb-2">Email <span className="text-primary">*</span></label>
                   <input
                     type="email"
                     className="w-full px-4 py-2 border border-default rounded-lg bg-primary text-primary placeholder-muted focus:outline-none focus:border-cranberry transition-colors"
-                    placeholder="your.email@example.com"
                   />
                 </div>
 
                 <div className="flex-1">
-                  <label className="block text-sm font-medium text-primary mb-2">Interest</label>
+                  <label className="block text-sm font-medium text-primary mb-2">Interest <span className="text-primary">*</span></label>
                   <CustomSelect
                     options={interestOptions}
                     placeholder="Select reason"
@@ -153,22 +151,20 @@ function Contact() {
               {/* LinkedIn */}
               <div>
                 <label className="block text-sm font-medium text-primary mb-2">
-                  LinkedIn URL <span className="text-muted">(optional)</span>
+                  LinkedIn URL 
                 </label>
                 <input
                   type="url"
                   className="w-full px-4 py-2 border border-default rounded-lg bg-primary text-primary placeholder-muted focus:outline-none focus:border-cranberry transition-colors"
-                  placeholder="https://linkedin.com/in/yourprofile"
                 />
               </div>
 
               {/* Message */}
               <div>
-                <label className="block text-sm font-medium text-primary mb-2">Message</label>
+                <label className="block text-sm font-medium text-primary mb-2">Message <span className="text-primary">*</span></label>
                 <textarea
                   rows={4}
                   className="w-full px-4 py-2 border border-default rounded-lg bg-primary text-primary placeholder-muted focus:outline-none focus:border-cranberry transition-colors resize-none"
-                  placeholder="Your message..."
                 />
               </div>
 

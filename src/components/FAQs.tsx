@@ -52,7 +52,7 @@ function FAQs() {
     }
 
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-2 bg-secondary p-8 lg:p-10 rounded-2xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 bg-secondary p-2 md:p-8 lg:p-10 rounded-2xl">
             <div className="px-4 flex flex-col justify-between gap-4 lg:gap-0">
                 <div >
                     <div className="flex flex-row items-center gap-3 mb-4">
