@@ -1,6 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap');
 
 @import "tailwindcss";
 
@@ -14,7 +14,7 @@
 
   /* Define your fonts */
   --font-sans: "Open Sans", sans-serif;
-  --font-display: "OpenSansCondensed", sans-serif;
+  --font-display: "Open Sans Condensed", sans-serif;
   --font-cursive: 'Allura', cursive;
 
   /* Custom animations */
@@ -40,28 +40,6 @@
       transform: translateY(0);
     }
   }
-}
-
-/* @font-face rules remain exactly as you have them */
-@font-face {
-  font-family: 'OpenSansCondensed';
-  src: url('./fonts/open-sans-condensed/OpenSans-CondBold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'OpenSansCondensed';
-  src: url('./fonts/open-sans-condensed/OpenSans-CondLight.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'OpenSansCondensed';
-  src: url('./fonts/open-sans-condensed/OpenSans-CondLightItalic.ttf') format('truetype');
-  font-weight: 300;
-  font-style: italic;
 }
 
 
