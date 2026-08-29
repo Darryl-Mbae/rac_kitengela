@@ -67,7 +67,7 @@ function BoardMembers() {
       </div>
     );
   }
-  console.log("Board Members Data:", boardMembers);
+
   return (
     <div id="executive" className='w-full overflow-hidden'>
       <div className='flex justify-between mt-10'>
