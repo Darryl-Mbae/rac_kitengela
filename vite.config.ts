@@ -21,6 +21,7 @@ export default defineConfig({
     }
   },
   server: {
-    middlewareMode: true
+    port: 5173,
+    open: true
   }
 })
