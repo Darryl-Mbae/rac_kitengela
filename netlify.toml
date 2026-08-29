@@ -3,7 +3,10 @@
 [build]
   command = "npm run build"
   publish = "dist"
-  environment = { NODE_VERSION = "20" }
+
+[build.environment]
+  NODE_VERSION = "20"
+  VITE_APP_ENV = "production"
 
 # Redirect all non-file requests to index.html for React Router
 [[redirects]]
@@ -11,12 +14,6 @@
   to = "/index.html"
   status = 200
   force = false
-
-# Set proper MIME types for static assets
-[[headers]]
-  for = "/dist/*"
-  [headers.values]
-    Cache-Control = "public, max-age=3600"
 
 # JavaScript files - explicit MIME type
 [[headers]]
@@ -81,7 +78,3 @@
     X-XSS-Protection = "1; mode=block"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "geolocation=(), microphone=(), camera=()"
-
-# Enable compression
-[build.environment]
-  VITE_APP_ENV = "production"
