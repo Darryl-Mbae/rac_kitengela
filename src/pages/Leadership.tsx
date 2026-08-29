@@ -37,7 +37,7 @@ export default function Leadership() {
                 mobileBackgroundImage="/images/board-2.jpg"
                 mobileOverlayImage="/images/board-2-no-bg.png"
                 overlayImage="/images/board-2-no-bg.png"
-                mobileImagePosition="object-[-730px_0px]"
+                mobileImagePosition="object-[50%_0px]"
 
             />
             <section>

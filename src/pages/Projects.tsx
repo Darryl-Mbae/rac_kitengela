@@ -267,7 +267,7 @@ export default function Projects() {
         spanColor="#00adbb"
         backgroundImage="/images/projects.JPG"
         overlayImage="/images/projects-nobg.png"
-        mobileImagePosition="object-[-490px_0px]"
+        mobileImagePosition="object-[57%_0px]"
 
       />
       <div className="w-[90%] mx-auto py-12">

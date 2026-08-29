@@ -171,7 +171,7 @@ function Events() {
         spanColor="#ff7600"
         backgroundImage="/images/events.jpg"
         overlayImage="/images/events-nnobg.png"
-        mobileImagePosition="object-[-580px_0px]"
+        mobileImagePosition="object-[42%_0px]"
 
       />
 
