@@ -1,0 +1,114 @@
+[
+  {
+    "id": "PRESIDENT",
+    "name": "Ken Musau",
+    "role": "President",
+    "image": "PRESIDENT",
+    "background": "#d41367",
+    "order": 1
+  },
+  {
+    "id": "PE",
+    "name": "Catherine Muthoni",
+    "role": "PE & PLD Director",
+    "image": "PE",
+    "background": "#f7a81b",
+    "order": 2
+  },
+  {
+    "id": "IPP",
+    "name": "Valentine Karimi",
+    "role": "IPP & Club Advisor",
+    "image": "IPP",
+    "background": "#d41367",
+    "order": 3
+  },
+  {
+    "id": "MEMBERSHIP",
+    "name": "Charles Kanyangi",
+    "role": "Membership & Club Service Directo",
+    "image": "MEMBERSHIP",
+    "background": "#f7a81b",
+    "order": 4
+  },
+  {
+    "id": "ETHICS",
+    "name": "Sophia Mueni",
+    "role": "Ethics & Gov Director",
+    "image": "ETHICS",
+    "background": "#d41367",
+    "order": 5
+  },
+  {
+    "id": "COMMUNITY",
+    "name": "Antah Kuthii",
+    "role": "Community Service Director",
+    "image": "COMMUNITY",
+    "background": "#f7a81b",
+    "order": 6
+  },
+  {
+    "id": "FINANCE",
+    "name": "Nicole Rose",
+    "role": "Finance Director",
+    "image": "FINANCE",
+    "background": "#d41367",
+    "order": 7
+  },
+  {
+    "id": "DEI",
+    "name": "Eve Chege",
+    "role": "DEI Director",
+    "image": "DEI",
+    "background": "#d41367",
+    "order": 11
+  },
+  {
+    "id": "SECRETARY",
+    "name": "Kendi Mwenda",
+    "role": "Club Secretary",
+    "image": "SECRETARY",
+    "background": "#d41367",
+    "order": 9
+  },
+  {
+    "id": "PR",
+    "name": "Darryl Mbae",
+    "role": "PR Director",
+    "image": "PR",
+    "background": "#f7a81b",
+    "order": 10
+  },
+  {
+    "id": "TRF",
+    "name": "Stella Makoji",
+    "role": "TRF Director",
+    "image": "TRF",
+    "background": "#f7a81b",
+    "order": 12
+  },
+  {
+    "id": "IS",
+    "name": "Pollete Mnaji",
+    "role": "international Service & SAA",
+    "image": "IS",
+    "background": "#f7a81b",
+    "order": 8
+  },
+  {
+    "id": "NEWGEN",
+    "name": "Edwin Mwika",
+    "role": "New Generation Director",
+    "image": "NEWGEN",
+    "background": "#f7a81b",
+    "order": 14
+  },
+  {
+    "id": "grc",
+    "name": "Yuri MuchaNchi",
+    "role": "Green Rotaract Concept",
+    "image": "GRC",
+    "background": "#d41367",
+    "order": 13
+  }
+]

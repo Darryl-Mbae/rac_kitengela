@@ -1,0 +1,135 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+
+
+@import "tailwindcss";
+
+@theme {
+  /* Brand colors */
+  --color-primary: #D41367;
+  --color-secondary: #17458F;
+  --color-accent: #F7A81B;
+  --color-supporting: #0067C8;
+  --color-bg-secondary: #17458F;
+
+  /* Define your fonts */
+  --font-sans: "Open Sans", sans-serif;
+  --font-display: "OpenSansCondensed", sans-serif;
+  --font-cursive: 'Allura', cursive;
+
+  /* Custom animations */
+  --animate-fade-in: fade-in 1.2s ease-out both;
+  --animate-fade-in-up: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* @font-face rules remain exactly as you have them */
+@font-face {
+  font-family: 'OpenSansCondensed';
+  src: url('./fonts/open-sans-condensed/OpenSans-CondBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSansCondensed';
+  src: url('./fonts/open-sans-condensed/OpenSans-CondLight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSansCondensed';
+  src: url('./fonts/open-sans-condensed/OpenSans-CondLightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+
+body {
+  font-family: var(--font-sans);
+  background-color: white;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+
+/* From Uiverse.io by adamgiebl */
+.cool-button {
+  font-size: 16px;
+  width: 180px;
+  padding: .8em 3.3em;
+  cursor: pointer;
+  transform: perspective(200px) rotateX(15deg);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(0deg,
+      var(--color-primary) 0%,
+      var(--color-primary) 100%);
+  /* box-shadow: rgba(220, 20, 60, 0.3) 0px 40px 29px 0px; */
+  will-change: transform;
+  transition: all 0.3s;
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.cool-button:hover {
+  transform: perspective(180px) rotateX(30deg) translateY(2px);
+  background: linear-gradient(0deg,
+      var(--color-primary) 0%,
+      var(--color-primary) 100%);
+}
+
+.cool-button:active {
+  transform: perspective(170px) rotateX(36deg) translateY(5px);
+}
+
+.bg-secondary {
+  background-color: var(--color-bg-secondary);
+}
+
+.swiper-pagination-bullets {
+  bottom: 0 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--color-primary) !important;
+  color: white !important;
+}
+
+.swiper-prev,
+.swiper-next {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary);
+  color: white;
+}
+
+
+section{
+  overflow-x: hidden;
+}
