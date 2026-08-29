@@ -3,7 +3,6 @@
 import { useRef, useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import type { Swiper as SwiperType } from "swiper";
 
 // Import Swiper styles in your global CSS or layout:
 // import "swiper/css";

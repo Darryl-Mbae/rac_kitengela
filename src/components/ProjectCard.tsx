@@ -1,4 +1,3 @@
-import { FiArrowUpRight } from "react-icons/fi";
 
 export interface Project {
   id: string;

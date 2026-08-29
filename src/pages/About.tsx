@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Hero from '../components/Hero';
+import SEO from '../components/SEO';
 import { usePageImages } from '../hooks/usePageImages';
+import { getPageSEO } from '../utils/seo';
 import {
   BookOpen,
   Compass,
@@ -37,6 +39,7 @@ const tabs: Tab[] = [
 
 export default function About() {
   const [activeTab, setActiveTab] = useState<string>('story');
+  const seo = getPageSEO("about");
 
   // Preload all images for this page
   usePageImages([
@@ -443,6 +446,14 @@ export default function About() {
 
   return (
     <div className="w-full bg-white">
+      {/* SEO */}
+      <SEO
+        title={seo.title}
+        description={seo.description}
+        canonical={seo.canonical}
+        ogImage={seo.ogImage}
+        schema={seo.schema}
+      />
       {/* Hero Section */}
       <Hero
         title={

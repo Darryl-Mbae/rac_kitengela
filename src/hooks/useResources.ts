@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../utils/firebase";
+import { useState } from "react";
 
 export interface Resource {
   id: string;
@@ -45,5 +43,5 @@ export function useResources() {
   const [error, setError] = useState<string | null>(null);
 
 
-  return { resources, loading, error };
+  return { resources, loading, error, setError, setLoading, setResources };
 }

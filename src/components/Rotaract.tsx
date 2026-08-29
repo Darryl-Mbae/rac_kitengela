@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform, type Variants } from "framer-motion";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../utils/firebase";
-import { useMotionValueEvent, AnimatePresence } from "framer-motion";
 import { galleryImages } from "../utils/images";
 
 const fadeUp: Variants = {
@@ -51,9 +50,9 @@ function useIsMobile(breakpoint: number = MOBILE_BREAKPOINT): boolean {
 }
 
 interface UpcomingEvent {
-    title: string;
-    description: string;
-    image?: string;
+    title: string | null;
+    description: string | null;
+    image?: string | null;
 }
 
 /**

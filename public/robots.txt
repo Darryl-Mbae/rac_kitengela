@@ -1,0 +1,20 @@
+# Rotaract Club of Kitengela - Robots Configuration
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /private
+
+# Crawl delay
+Crawl-delay: 1
+
+# Sitemaps
+Sitemap: https://rotaractkitengela.org/sitemap.xml
+
+# Specific rules for search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1

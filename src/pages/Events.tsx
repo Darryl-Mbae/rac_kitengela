@@ -1,9 +1,11 @@
 import EventCard, { type Event } from "../components/EventCard";
 import Hero from "../components/Hero";
+import SEO from "../components/SEO";
 import { usePageImages } from "../hooks/usePageImages";
+import { getPageSEO } from "../utils/seo";
 import { useEffect, useMemo, useState } from "react";
 import { HiMiniArrowDownLeft, HiMiniArrowUpRight } from "react-icons/hi2";
-import { Filter, ListFilter } from 'lucide-react';
+import { ListFilter } from 'lucide-react';
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../utils/firebase";
 import { Link } from "react-router-dom";
@@ -17,6 +19,8 @@ function Events() {
     '/images/IMG3.jpg',
     '/images/IMG3-nobg.png'
   ]);
+
+  const seo = getPageSEO("events");
 
   const [events, setEvents] = useState<Event[]>([]);
   const [search, setSearch] = useState("");
@@ -148,6 +152,15 @@ function Events() {
 
   return (
     <div className="w-full bg-white">
+      {/* SEO */}
+      <SEO
+        title={seo.title}
+        description={seo.description}
+        canonical={seo.canonical}
+        ogImage={seo.ogImage}
+        keywords={seo.keywords}
+        schema={seo.schema}
+      />
       {/* Hero Section */}
       <Hero
         title={

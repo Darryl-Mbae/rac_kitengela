@@ -1,10 +1,14 @@
 import { useState } from 'react';
 import { Heart, Mail, MapPin, Send, CheckCircle } from 'lucide-react';
 import { usePageImages } from '../hooks/usePageImages';
+import SEO from '../components/SEO';
+import { getPageSEO } from '../utils/seo';
 
 export default function Join() {
   // Preload images for this page
   usePageImages([]);
+
+  const seo = getPageSEO("join");
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -43,6 +47,14 @@ export default function Join() {
 
   return (
     <div className="w-full bg-white">
+      {/* SEO */}
+      <SEO
+        title={seo.title}
+        description={seo.description}
+        canonical={seo.canonical}
+        ogImage={seo.ogImage}
+        schema={seo.schema}
+      />
       {/* Premium Header Banner */}
       <div className="relative bg-gradient-to-br from-primary via-primary to-secondary py-20 px-[5%] text-white overflow-hidden mb-12">
         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />

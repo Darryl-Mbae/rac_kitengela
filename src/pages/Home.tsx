@@ -1,14 +1,16 @@
 import About from "../components/About";
-import Contact from "../components/Contact";
 import FAQs from "../components/FAQs";
 import Hero from "../components/Hero";
 import JoinUs from "../components/JoinUs";
 import Rotaract from "../components/Rotaract";
 import Testimonial from "../components/Testimonial";
+import SEO from "../components/SEO";
 import { usePageImages } from "../hooks/usePageImages";
 import { R2_BASE_URL } from "../utils/images";
+import { getPageSEO } from "../utils/seo";
 
 export const Home = () => {
+    const seo = getPageSEO("home");
     // Preload all hero images and component images
     usePageImages([
         '/images/IMG3.jpg',
@@ -26,6 +28,13 @@ export const Home = () => {
     ]);
     return (
         <>
+            <SEO
+                title={seo.title}
+                description={seo.description}
+                canonical={seo.canonical}
+                ogImage={seo.ogImage}
+                schema={seo.schema}
+            />
             <Hero />
             <About />
             <Rotaract />

@@ -1,7 +1,9 @@
 import Hero from "../components/Hero";
+import SEO from "../components/SEO";
 import { Link, useLocation } from "react-router-dom";
 import { ListFilter } from 'lucide-react';
 import { usePageImages } from "../hooks/usePageImages";
+import { getPageSEO } from "../utils/seo";
 import { HiMiniArrowDownLeft, HiMiniArrowUpRight } from "react-icons/hi2";
 import { galleryImages } from "../utils/images";
 import { useEffect, useMemo, useState } from "react";
@@ -26,8 +28,8 @@ export default function Projects() {
   const [openFocusDropdown, setOpenFocusDropdown] = useState(false);
   const [mobileFilterOpen, setMobileFilterOpen] = useState(false);
 
-
   const location = useLocation();
+  const seo = getPageSEO("projects");
 
   // Hashes coming from the "Service Areas" and "Focus" navbar columns map
   // to filter values; hashes coming from "Signature Projects" map to a
@@ -187,9 +189,9 @@ export default function Projects() {
       if (focusArea !== "All") {
         let matchesFocus = false;
         if (focusArea === "Environmental Projects") {
-          matchesFocus = project.tags?.includes("Environment");
+          matchesFocus = project.tags?.includes("Environment") ?? false;
         } else if (focusArea === "Collaborations") {
-          matchesFocus = project.tags?.includes("Collaboration");
+          matchesFocus = project.tags?.includes("Collaboration") ?? false;
         } else if (focusArea === "All Projects") {
           matchesFocus = true;
         }
@@ -226,9 +228,9 @@ export default function Projects() {
       if (focusArea !== "All") {
         let matchesFocus = false;
         if (focusArea === "Environmental Projects") {
-          matchesFocus = project.tags?.includes("Environment");
+          matchesFocus = project.tags?.includes("Environment") ?? false;
         } else if (focusArea === "Collaborations") {
-          matchesFocus = project.tags?.includes("Collaboration");
+          matchesFocus = project.tags?.includes("Collaboration") ?? false;
         } else if (focusArea === "All Projects") {
           matchesFocus = true;
         }
@@ -246,6 +248,15 @@ export default function Projects() {
 
   return (
     <div className="w-full bg-white">
+      {/* SEO */}
+      <SEO
+        title={seo.title}
+        description={seo.description}
+        canonical={seo.canonical}
+        ogImage={seo.ogImage}
+        keywords={seo.keywords}
+        schema={seo.schema}
+      />
       {/* Hero Section */}
       <Hero
         title={

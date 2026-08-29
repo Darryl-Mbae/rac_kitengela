@@ -11,7 +11,7 @@ import { useLocation } from 'react-router-dom';
 export const useSmoothScroll = () => {
   const location = useLocation();
   const lastHashRef = useRef<string>('');
-  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const scrollTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const hash = location.hash;

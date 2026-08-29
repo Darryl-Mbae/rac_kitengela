@@ -1,4 +1,4 @@
-import { Mail, PartyPopper, ChevronDown, Users, Award, History, UserCircle, FolderKanban, Leaf, Handshake, CheckCircle2, FileText, BookOpen, Scale, HeartHandshake, Megaphone, BrainCircuit, Landmark, Droplets, HeartPulse, Smile, Newspaper, MessageCircle, ArrowRight } from 'lucide-react';
+import { Mail, PartyPopper, ChevronDown, Users, Award, History, UserCircle, FolderKanban, Leaf, Handshake, CheckCircle2,Scale, Megaphone, BrainCircuit, Landmark, Droplets, HeartPulse, Smile, ArrowRight } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 

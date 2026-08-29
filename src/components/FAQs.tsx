@@ -1,4 +1,3 @@
-import { MessageCircle } from "lucide-react"
 import { useState, useEffect } from "react";
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { db } from "../utils/firebase";

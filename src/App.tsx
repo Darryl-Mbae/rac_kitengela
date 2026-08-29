@@ -1,8 +1,8 @@
 import './App.css';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar';
-import LoadingScreen from './components/LoadingScreen';
 import AppInitializer from './components/AppInitializer';
 import { LoadingProvider } from './contexts/LoadingContext';
 import { useSmoothScroll } from './hooks/useSmoothScroll';
@@ -60,14 +60,16 @@ function AppContent() {
 
 function App() {
   return (
-    <LoadingProvider>
-      {/* <LoadingScreen /> */}
-      <AppInitializer>
-        <BrowserRouter>
-          <AppContent />
-        </BrowserRouter>
-      </AppInitializer>
-    </LoadingProvider>
+    <HelmetProvider>
+      <LoadingProvider>
+        {/* <LoadingScreen /> */}
+        <AppInitializer>
+          <BrowserRouter>
+            <AppContent />
+          </BrowserRouter>
+        </AppInitializer>
+      </LoadingProvider>
+    </HelmetProvider>
   );
 }
 

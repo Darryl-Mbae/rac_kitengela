@@ -1,6 +1,5 @@
 import { Pagination, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Speech } from 'lucide-react';
 import { useRef, useEffect, useState } from 'react';
 import { collection, getDocs, query } from "firebase/firestore";
 import { db } from "../utils/firebase";
@@ -24,7 +23,7 @@ interface Testimonial {
   order: number;
 }
 
-function Testimonial({view}) {
+function Testimonial({ view }: { view: "laptop" | "mobile" }) {
   const swiperRef = useRef<any>(null);
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
   const [loading, setLoading] = useState(true);
