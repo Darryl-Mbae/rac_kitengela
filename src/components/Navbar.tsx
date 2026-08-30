@@ -217,10 +217,15 @@ export default function Navbar() {
 
                         {/* Right side */}
                         <div className="hidden md:flex items-center space-x-4">
-                            <div className={`cursor-pointer flex items-center justify-center w-8 h-8 rounded-full border transition-colors duration-300 hover:scale-110 ${isWhite ? 'border-black text-black' : 'border-white text-white'
+                            <a
+                                href="https://mail.google.com/mail/?view=cm&to=rotaractkitengela@gmail.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Send us an email"
+                                className={`cursor-pointer flex items-center justify-center w-8 h-8 rounded-full border transition-colors duration-300 hover:scale-110 ${isWhite ? 'border-black text-black' : 'border-white text-white'
                                 }`}>
                                 <Mail size={14} />
-                            </div>
+                            </a>
                             <Link
                                 to="/join"
                                 className={`px-1 py-1 rounded-full text-sm flex items-center gap-3 transition-transform duration-200 hover:scale-105 ${isWhite ? 'bg-primary' : 'bg-white'
@@ -235,10 +240,15 @@ export default function Navbar() {
 
                         {/* Mobile Toggle */}
                         <div className='md:hidden! important flex flex-row items-center gap-1'>
-                            <div className={`cursor-pointer flex items-center justify-center w-8 h-8 rounded-full border transition-colors duration-300 hover:scale-110 ${isWhite ? 'border-black text-black' : 'border-white text-white'
+                            <a
+                                href="https://mail.google.com/mail/?view=cm&to=rotaractkitengela@gmail.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Send us an email"
+                                className={`cursor-pointer flex items-center justify-center w-8 h-8 rounded-full border transition-colors duration-300 hover:scale-110 ${isWhite ? 'border-black text-black' : 'border-white text-white'
                                 }`}>
                                 <Mail size={14} />
-                            </div>
+                            </a>
                             <button
                                 onClick={() => setIsOpen(prev => !prev)}
                                 className={`hamburger hamburger--spin ${isOpen ? 'is-active' : ''} ${isWhite ? '' : 'is-black'}`}

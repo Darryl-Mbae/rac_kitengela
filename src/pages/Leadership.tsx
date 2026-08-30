@@ -40,7 +40,7 @@ export default function Leadership() {
                 mobileImagePosition="object-[50%_0px]"
 
             />
-            <section>
+            <section className="overflow-x-hidden">
                 <BoardMembers />
                 <MembersList />
             </section>
