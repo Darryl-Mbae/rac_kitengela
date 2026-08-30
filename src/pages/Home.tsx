@@ -38,7 +38,7 @@ export const Home = () => {
             <Hero />
             <About />
             <Rotaract />
-            <section>
+            <section className="overflow-x-hidden">
                 <Testimonial view="laptop" />
                 <JoinUs />
                 <Testimonial view="mobile" />

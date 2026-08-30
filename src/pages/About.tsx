@@ -445,7 +445,7 @@ export default function About() {
   };
 
   return (
-    <div className="w-full bg-white">
+    <div className="w-full bg-white ">
       {/* SEO */}
       <SEO
         title={seo.title}
@@ -471,7 +471,7 @@ export default function About() {
       />
 
       {/* Main Container */}
-      <div className="max-w-6xl mx-auto px-4 md:px-6 pb-20">
+      <div className="max-w-6xl mx-auto px-4 md:px-6 pb-20 overflow-x-hidden">
         {/* Desktop Layout (Tabs Sidebar + Content Column) */}
         <div className="hidden lg:grid grid-cols-[30%_70%] gap-10 items-start">
           {/* Left Navigation Sidebar */}
