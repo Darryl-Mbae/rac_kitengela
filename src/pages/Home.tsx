@@ -2,7 +2,7 @@ import About from "../components/About";
 import FAQs from "../components/FAQs";
 import Hero from "../components/Hero";
 import JoinUs from "../components/JoinUs";
-import Rotaract from "../components/Rotaract";
+// import Rotaract from "../components/Rotaract";
 import Testimonial from "../components/Testimonial";
 import SEO from "../components/SEO";
 import { usePageImages } from "../hooks/usePageImages";
