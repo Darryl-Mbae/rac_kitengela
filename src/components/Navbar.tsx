@@ -170,7 +170,7 @@ export default function Navbar() {
 
     return (
         <nav
-            className={`sticky top-0 z-50 relative transition-colors duration-300 ${isBgWhite ? 'bg-white shadow-sm' : 'bg-gradient-to-b from-black/60 via-black/30 to-transparent max-w-screen overflow-hidden'
+            className={`sticky top-0 z-50 relative transition-colors duration-300 max-w-screen overflow-hidden ${isBgWhite ? 'bg-white shadow-sm' : 'bg-gradient-to-b from-black/60 via-black/30 to-transparent '
                 }`}
         >
             <div ref={barRef} className="relative z-50 w-[90%] mx-auto">

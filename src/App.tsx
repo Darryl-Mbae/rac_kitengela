@@ -42,7 +42,7 @@ function AppContent() {
   return (
     <div className='relative flex flex-col min-h-screen p-0 '>
       <Navbar />
-      <main className="flex-grow">
+      <main className="">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
