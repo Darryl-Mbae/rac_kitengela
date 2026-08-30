@@ -46,7 +46,7 @@ export default function Join() {
   };
 
   return (
-    <div className="w-full bg-white">
+    <div className="w-full bg-white ">
       {/* SEO */}
       <SEO
         title={seo.title}

@@ -43,7 +43,7 @@ export default function Hero({
     }, [backgroundImage, overlayImage, mobileBg, mobileOverlay]);
 
     return (
-        <div className="bg-[#f8fafc] mt-[-11vh] relative flex min-h-[105vh] md:min-h-[103vh] w-full items-center overflow-hidden rounded-b-4xl">
+        <div className="bg-[#f8fafc] mt-[-11vh] relative flex min-h-[105vh] md:min-h-[103vh] w-full items-center max-w-screen overflow-x-hidden overflow-hidden rounded-b-4xl">
             {/* Background */}
             <img
                 src={backgroundImage}
