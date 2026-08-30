@@ -104,8 +104,8 @@ function RotaractMobile() {
     const { upcomingEvent, loading } = useUpcomingEvent();
 
     return (
-        <div className="overflow-hidden max-w-screen min-h-screen py-4 flex flex-col">
-            <div className="w-[90%] overflow-x-hidden overflow-hidden px-4 mx-auto py-8">
+        <div className="overflow-hidden min-h-screen py-4 flex flex-col">
+            <div className="w-[90%] overflow-hidden px-4 mx-auto py-8">
                 {/* Eyebrow */}
                 <motion.div
                     initial={{ opacity: 0 }}

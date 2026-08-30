@@ -40,7 +40,7 @@ function AppContent() {
   }, [location.pathname, location.hash]);
 
   return (
-    <div className='relative flex flex-col min-h-screen p-0'>
+    <div className='relative flex flex-col min-h-screen p-0 '>
       <Navbar />
       <main className="flex-grow">
         <Routes>

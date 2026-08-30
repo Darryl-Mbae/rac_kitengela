@@ -151,7 +151,7 @@ function Events() {
   const totalPages = Math.ceil(totalFiltered / perPage);
 
   return (
-    <div className="w-full bg-white overflow-x-hidden ">
+    <div className="w-full bg-white ">
       {/* SEO */}
       <SEO
         title={seo.title}
